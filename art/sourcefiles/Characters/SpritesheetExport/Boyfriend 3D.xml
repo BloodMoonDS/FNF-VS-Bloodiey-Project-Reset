@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Boyfriend 3D.png">
+<SubTexture name="Boyfriend 3D idle0000" x="408" y="1682" width="209" height="260" frameX="-599" frameY="-414" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0001" x="1937" y="1343" width="209" height="265" frameX="-598" frameY="-410" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0002" x="1937" y="0" width="210" height="269" frameX="-597" frameY="-406" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0003" x="404" y="1136" width="212" height="273" frameX="-595" frameY="-402" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0004" x="1082" y="277" width="213" height="276" frameX="-594" frameY="-399" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0005" x="651" y="575" width="213" height="277" frameX="-594" frameY="-397" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0006" x="1082" y="0" width="214" height="277" frameX="-593" frameY="-397" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0007" x="1082" y="0" width="214" height="277" frameX="-593" frameY="-397" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0008" x="1082" y="0" width="214" height="277" frameX="-593" frameY="-397" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0009" x="1082" y="0" width="214" height="277" frameX="-593" frameY="-397" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0010" x="1082" y="0" width="214" height="277" frameX="-593" frameY="-397" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0011" x="1082" y="0" width="214" height="277" frameX="-593" frameY="-397" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0012" x="1082" y="0" width="214" height="277" frameX="-593" frameY="-397" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0013" x="1082" y="0" width="214" height="277" frameX="-593" frameY="-397" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0014" x="1082" y="0" width="214" height="277" frameX="-593" frameY="-397" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0015" x="1082" y="0" width="214" height="277" frameX="-593" frameY="-397" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D idle0016" x="1082" y="0" width="214" height="277" frameX="-593" frameY="-397" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0000" x="824" y="1682" width="207" height="256" frameX="-619" frameY="-418" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0001" x="617" y="1682" width="207" height="258" frameX="-619" frameY="-416" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0002" x="204" y="1682" width="204" height="261" frameX="-620" frameY="-413" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0003" x="0" y="1682" width="204" height="265" frameX="-620" frameY="-409" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0004" x="1060" y="1410" width="202" height="270" frameX="-621" frameY="-404" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0005" x="616" y="1136" width="201" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0006" x="817" y="1136" width="201" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0007" x="817" y="1136" width="201" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0008" x="817" y="1136" width="201" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0009" x="817" y="1136" width="201" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0010" x="817" y="1136" width="201" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0011" x="817" y="1136" width="201" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0012" x="817" y="1136" width="201" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0013" x="817" y="1136" width="201" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0014" x="817" y="1136" width="201" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0015" x="817" y="1136" width="201" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING DOWN0016" x="817" y="1136" width="201" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0000" x="1741" y="1054" width="195" height="256" frameX="-619" frameY="-418" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0001" x="1741" y="796" width="194" height="258" frameX="-619" frameY="-416" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0002" x="1741" y="535" width="194" height="261" frameX="-620" frameY="-413" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0003" x="1741" y="270" width="194" height="265" frameX="-620" frameY="-409" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0004" x="1262" y="1410" width="193" height="270" frameX="-621" frameY="-404" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0005" x="1018" y="1136" width="193" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0006" x="1211" y="1136" width="193" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0007" x="1211" y="1136" width="193" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0008" x="1211" y="1136" width="193" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0009" x="1211" y="1136" width="193" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0010" x="1211" y="1136" width="193" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0011" x="1211" y="1136" width="193" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0012" x="1211" y="1136" width="193" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0013" x="1211" y="1136" width="193" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0014" x="1211" y="1136" width="193" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0015" x="1211" y="1136" width="193" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS DOWN0016" x="1211" y="1136" width="193" height="273" frameX="-621" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0000" x="622" y="1410" width="219" height="271" frameX="-588" frameY="-403" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0001" x="1519" y="1092" width="221" height="272" frameX="-586" frameY="-402" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0002" x="1519" y="0" width="222" height="273" frameX="-585" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0003" x="1296" y="275" width="222" height="274" frameX="-585" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0004" x="888" y="860" width="223" height="275" frameX="-584" frameY="-399" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0005" x="0" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0006" x="222" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0007" x="222" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0008" x="222" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0009" x="222" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0010" x="222" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0011" x="222" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0012" x="222" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0013" x="222" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0014" x="222" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0015" x="222" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING LEFT0016" x="222" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0000" x="841" y="1410" width="219" height="271" frameX="-588" frameY="-403" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0001" x="0" y="1410" width="221" height="272" frameX="-586" frameY="-402" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0002" x="1519" y="273" width="222" height="273" frameX="-585" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0003" x="1296" y="549" width="222" height="274" frameX="-585" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0004" x="1296" y="0" width="223" height="275" frameX="-584" frameY="-399" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0005" x="444" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0006" x="666" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0007" x="666" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0008" x="666" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0009" x="666" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0010" x="666" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0011" x="666" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0012" x="666" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0013" x="666" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0014" x="666" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0015" x="666" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS LEFT0016" x="666" y="860" width="222" height="276" frameX="-585" frameY="-398" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0000" x="0" y="0" width="216" height="288" frameX="-591" frameY="-386" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0001" x="432" y="0" width="216" height="287" frameX="-591" frameY="-387" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0002" x="0" y="288" width="216" height="287" frameX="-591" frameY="-387" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0003" x="648" y="0" width="217" height="286" frameX="-590" frameY="-388" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0004" x="0" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0005" x="217" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0006" x="434" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0007" x="434" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0008" x="434" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0009" x="434" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0010" x="434" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0011" x="434" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0012" x="434" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0013" x="434" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0014" x="434" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0015" x="434" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING UP0016" x="434" y="575" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0000" x="216" y="0" width="216" height="288" frameX="-591" frameY="-386" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0001" x="216" y="288" width="216" height="287" frameX="-591" frameY="-387" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0002" x="432" y="288" width="216" height="287" frameX="-591" frameY="-387" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0003" x="648" y="286" width="217" height="286" frameX="-590" frameY="-388" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0004" x="865" y="0" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0005" x="865" y="285" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0006" x="865" y="570" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0007" x="865" y="570" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0008" x="865" y="570" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0009" x="865" y="570" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0010" x="865" y="570" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0011" x="865" y="570" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0012" x="865" y="570" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0013" x="865" y="570" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0014" x="865" y="570" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0015" x="865" y="570" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS UP0016" x="865" y="570" width="217" height="285" frameX="-590" frameY="-389" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0000" x="1937" y="807" width="195" height="268" frameX="-617" frameY="-406" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0001" x="1937" y="269" width="198" height="269" frameX="-615" frameY="-405" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0002" x="1455" y="1410" width="200" height="270" frameX="-611" frameY="-404" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0003" x="221" y="1410" width="202" height="272" frameX="-608" frameY="-402" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0004" x="1519" y="546" width="200" height="273" frameX="-607" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0005" x="1296" y="823" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0006" x="1082" y="553" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0007" x="1082" y="553" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0008" x="1082" y="553" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0009" x="1082" y="553" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0010" x="1082" y="553" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0011" x="1082" y="553" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0012" x="1082" y="553" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0013" x="1082" y="553" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0014" x="1082" y="553" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0015" x="1082" y="553" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D SING RIGHT0016" x="1082" y="553" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0000" x="1937" y="1075" width="190" height="268" frameX="-617" frameY="-406" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0001" x="1937" y="538" width="192" height="269" frameX="-615" frameY="-405" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0002" x="1741" y="0" width="196" height="270" frameX="-611" frameY="-404" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0003" x="423" y="1410" width="199" height="272" frameX="-608" frameY="-402" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0004" x="1519" y="819" width="200" height="273" frameX="-607" frameY="-401" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0005" x="0" y="1136" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0006" x="202" y="1136" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0007" x="202" y="1136" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0008" x="202" y="1136" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0009" x="202" y="1136" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0010" x="202" y="1136" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0011" x="202" y="1136" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0012" x="202" y="1136" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0013" x="202" y="1136" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0014" x="202" y="1136" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0015" x="202" y="1136" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+<SubTexture name="Boyfriend 3D MISS RIGHT0016" x="202" y="1136" width="202" height="274" frameX="-605" frameY="-400" frameWidth="1422" frameHeight="800" />
+</TextureAtlas>

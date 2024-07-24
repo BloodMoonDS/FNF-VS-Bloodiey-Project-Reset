@@ -9,9 +9,13 @@ import options.OptionsState;
 
 class MainMenuState extends MusicBeatState
 {
+	public static var MODTUrl:String = "http://bloodieysart.rf.gd/media/motd.txt";
+	var MODTHttp = new haxe.Http(MODTUrl);
+	public var MOTDText:String;
+
 	public static var psychEngineVersion:String = '0.7.3'; // This is also used for Discord RPC
 	public static var curSelected:Int = 0;
-
+	
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
 	var optionShit:Array<String> = [
@@ -29,6 +33,19 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
+		
+		MODTHttp.onData=function(data:String)
+		{
+			MOTDText = data;
+			trace(data);
+		}
+		
+		MODTHttp.onError = function(error){
+			trace('error: $error');
+		}
+		
+
+		MODTHttp.request();
 		#if MODS_ALLOWED
 		Mods.pushGlobalMods();
 		#end
@@ -95,6 +112,10 @@ class MainMenuState extends MusicBeatState
 		fnfVer.scrollFactor.set();
 		fnfVer.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(fnfVer);
+		var messageoftheday:FlxText = new FlxText(12,32, 0, "Message of the day:\n" + MOTDText, 24);
+		messageoftheday.scrollFactor.set();
+		messageoftheday.setFormat("Segoe UI Emoji", 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(messageoftheday);
 		changeItem();
 
 		#if ACHIEVEMENTS_ALLOWED
