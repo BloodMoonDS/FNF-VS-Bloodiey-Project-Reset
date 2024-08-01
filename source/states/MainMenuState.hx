@@ -112,7 +112,7 @@ class MainMenuState extends MusicBeatState
 			car.animation.addByPrefix('selected',"button-select");
 			menuItems.add(car);
 			menuItem.text = optionShit[i];
-			menuItem.setFormat("Segoe UI Emoji", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			menuItem.setFormat("Segoe UI Symbol", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			add(menuItem);
 			
 			
