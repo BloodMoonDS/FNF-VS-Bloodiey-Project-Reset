@@ -24,7 +24,7 @@ class AchievementsMenuState extends MusicBeatState
 	{
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
-
+		
 		#if DISCORD_ALLOWED
 		DiscordClient.changePresence("Achievements Menu", null);
 		#end
@@ -36,7 +36,7 @@ class AchievementsMenuState extends MusicBeatState
 			if(data.hidden != true || unlocked)
 				options.push(makeAchievement(achievement, data, unlocked, data.mod));
 		}
-
+		
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
 

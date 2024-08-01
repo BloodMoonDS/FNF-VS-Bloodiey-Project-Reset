@@ -20,6 +20,10 @@ class CreditsState extends MusicBeatState
 
 	override function create()
 	{
+
+		FlxG.sound.playMusic(Paths.music('frutigeraero2'), 0);
+
+
 		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);

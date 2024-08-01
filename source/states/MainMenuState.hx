@@ -1,5 +1,6 @@
 package states;
 
+import flixel.math.FlxRandom;
 import flixel.FlxObject;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.effects.FlxFlicker;
@@ -25,15 +26,27 @@ class MainMenuState extends MusicBeatState
 		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
 		#if !switch 'donate', #end
-		'options'
+		'options',
+		#if !switch 'blog' #end
 	];
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
 
+	static function randomMusic()
+	{
+		var mus =  new FlxRandom();
+		var mustoplay = mus.int(1,3);
+		trace(mustoplay);
+		FlxG.sound.playMusic(Paths.music('frutigeraero$mustoplay'), 0);
+	}
+
 	override function create()
 	{
 		
+		randomMusic();
+
+
 		MODTHttp.onData=function(data:String)
 		{
 			MOTDText = data;
@@ -42,6 +55,7 @@ class MainMenuState extends MusicBeatState
 		
 		MODTHttp.onError = function(error){
 			trace('error: $error');
+			MOTDText = 'error: $error';
 		}
 		
 
@@ -89,6 +103,22 @@ class MainMenuState extends MusicBeatState
 		for (i in 0...optionShit.length)
 		{
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
+			var TXTOffset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 3;
+			var menuItem:FlxText = new FlxText(32, (i*80)+TXTOffset + 24);
+			var car:FlxSprite = new FlxSprite(0, (i*80)+TXTOffset);
+			car.antialiasing = ClientPrefs.data.antialiasing;
+			car.frames = Paths.getSparrowAtlas('hud/Buttons');
+			car.animation.addByPrefix('idle',"button-idle");
+			car.animation.addByPrefix('selected',"button-select");
+			menuItems.add(car);
+			menuItem.text = optionShit[i];
+			menuItem.setFormat("Segoe UI Emoji", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			add(menuItem);
+			
+			
+
+			/*
+			// Sprite
 			var menuItem:FlxSprite = new FlxSprite(0, (i * 140) + offset);
 			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
@@ -96,12 +126,13 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
 			menuItem.animation.play('idle');
 			menuItems.add(menuItem);
+			*/
 			var scr:Float = (optionShit.length - 4) * 0.135;
 			if (optionShit.length < 6)
 				scr = 0;
-			menuItem.scrollFactor.set(0, scr);
+			//menuItem.scrollFactor.set(0, scr);
 			menuItem.updateHitbox();
-			menuItem.screenCenter(X);
+			//menuItem.screenCenter(X);
 		}
 
 		var psychVer:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
@@ -167,8 +198,13 @@ class MainMenuState extends MusicBeatState
 				{
 					CoolUtil.browserLoad('https://ninja-muffin24.itch.io/funkin');
 				}
+				if (optionShit[curSelected] == 'blog')
+				{
+						CoolUtil.browserLoad('http://bloodieysart.rf.gd/');
+				}
 				else
 				{
+					
 					selectedSomethin = true;
 
 					if (ClientPrefs.data.flashing)
@@ -204,6 +240,7 @@ class MainMenuState extends MusicBeatState
 									PlayState.SONG.splashSkin = null;
 									PlayState.stageUI = 'normal';
 								}
+							
 						}
 					});
 

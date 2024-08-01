@@ -32,6 +32,9 @@ class OptionsState extends MusicBeatState
 	var selectorRight:Alphabet;
 
 	override function create() {
+
+		
+
 		#if DISCORD_ALLOWED
 		DiscordClient.changePresence("Options Menu", null);
 		#end
@@ -44,6 +47,8 @@ class OptionsState extends MusicBeatState
 		bg.screenCenter();
 		add(bg);
 
+		FlxG.sound.playMusic(Paths.music('frutigeraero1'), 0);
+		
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);
 
