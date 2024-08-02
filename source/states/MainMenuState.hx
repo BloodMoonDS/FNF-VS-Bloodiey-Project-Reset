@@ -76,7 +76,7 @@ class MainMenuState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 
 		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
-		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
+		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('aeroBG'));
 		bg.antialiasing = ClientPrefs.data.antialiasing;
 		bg.scrollFactor.set(0, yScroll);
 		bg.setGraphicSize(Std.int(bg.width * 1.175));
@@ -87,7 +87,7 @@ class MainMenuState extends MusicBeatState
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
 
-		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
+		magenta = new FlxSprite(-80).loadGraphic(Paths.image('aeroDesat'));
 		magenta.antialiasing = ClientPrefs.data.antialiasing;
 		magenta.scrollFactor.set(0, yScroll);
 		magenta.setGraphicSize(Std.int(magenta.width * 1.175));
@@ -104,7 +104,7 @@ class MainMenuState extends MusicBeatState
 		{
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
 			var TXTOffset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 3;
-			var menuItem:FlxText = new FlxText(32, (i*80)+TXTOffset + 24);
+			var menuItem:FlxText = new FlxText(32, (i*80)+TXTOffset + 16);
 			var car:FlxSprite = new FlxSprite(0, (i*80)+TXTOffset);
 			car.antialiasing = ClientPrefs.data.antialiasing;
 			car.frames = Paths.getSparrowAtlas('hud/Buttons');
