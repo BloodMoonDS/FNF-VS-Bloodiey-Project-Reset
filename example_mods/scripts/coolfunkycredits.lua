@@ -7,47 +7,18 @@ I also copied the design from Piggyfriend1792 :)
 
 local songdata = {
 
-    ['misshapen-song'] = {
-    'Misshapen song', -- Song name [1]
-    'Tonicstroom', -- Composer [2]
-    '5', --  Length for onscreen [3]
-    },
-
-    ['the-mushrooms'] = {
-        'the mushrooms',
-        'Tonicstroom',
-        '12'
-    },
-
-    ['is-he-tonyx'] = {
-        'is he tonyx',
-        'Tonicstroom',
-        '7', 
-    },
-
-    ['where-i-am'] = {
-        'Where i am?',
-        'Modisc',
-        '5', 
-    },
- 
-    ['crazymach'] = {
-        'Crazymach',
-        'Modics',
-        '4', 
-    },
-
     ['Tutorial'] = {
         'Tutorial',
         'Kawai Sprite',
         '7', 
     },
-      
-    ['shut-up'] = {
-        'SHUT UP!!',
-        'Modics',
-        '4', 
+     
+    ['source-code'] = {
+        'Source Code',
+        'Bloodiey',
+        '7', 
     },
+
 
 -- Replace this data with your songs and the song composer. 
 -- The song name in the [] MUST be the same song in the JSON file
