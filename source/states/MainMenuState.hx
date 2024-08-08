@@ -15,6 +15,9 @@ class MainMenuState extends MusicBeatState
 	public var MOTDText:String;
 
 	public static var psychEngineVersion:String = '0.7.3'; // This is also used for Discord RPC
+
+	public static var vsBloodieyVer:String = "0.1.0";
+
 	public static var curSelected:Int = 0;
 	
 	var menuItems:FlxTypedGroup<FlxSprite>;
@@ -94,7 +97,7 @@ class MainMenuState extends MusicBeatState
 		magenta.updateHitbox();
 		magenta.screenCenter();
 		magenta.visible = false;
-		magenta.color = 0xFFfd719b;
+		magenta.color = 0xff00ff2f;
 		add(magenta);
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
@@ -111,7 +114,28 @@ class MainMenuState extends MusicBeatState
 			car.animation.addByPrefix('idle',"button-idle");
 			car.animation.addByPrefix('selected',"button-select");
 			menuItems.add(car);
-			menuItem.text = optionShit[i];
+
+			switch(optionShit[i])
+			{
+				default:
+					menuItem.text = optionShit[i]; 
+				case 'story_mode':
+					menuItem.text = "Story Mode";
+				case 'freeplay':
+					menuItem.text = "Freeplay";
+				case 'mods':
+					menuItem.text = "Mods";
+				case 'awards':
+					menuItem.text = "Awards";
+				case 'credits':
+					menuItem.text = "Credits";
+				case 'options':
+					menuItem.text = "Options";
+				case 'blog':
+					menuItem.text = "Blog";
+				case 'donate':
+					menuItem.text = "Donate";
+			}
 			menuItem.setFormat("Segoe UI Symbol", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			add(menuItem);
 			
