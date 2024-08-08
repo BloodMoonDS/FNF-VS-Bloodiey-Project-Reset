@@ -3,18 +3,14 @@
 	"difficulties": "Hard",
 	"hideFreeplay": false,
 	"weekBackground": "stage",
+	"weekBefore": "tutorial",
 	"freeplayColor": [
 		146,
 		113,
 		253
 	],
-	"weekBefore": "tutorial",
 	"startUnlocked": true,
-	"weekCharacters": [
-		"bloodiey",
-		"bf",
-		"gf"
-	],
+	"hideStoryMode": true,
 	"songs": [
 		[
 			"whiskerlovania",
@@ -27,7 +23,7 @@
 		],
 		[
 			"source code",
-			"steak",
+			"bloodiey",
 			[
 				146,
 				113,
@@ -35,7 +31,11 @@
 			]
 		]
 	],
-	"hideStoryMode": true,
-	"weekName": "Vs Bloodiey Demo Week",
-	"hiddenUntilUnlocked": false
+	"weekCharacters": [
+		"bloodiey",
+		"bf",
+		"gf"
+	],
+	"hiddenUntilUnlocked": false,
+	"weekName": "Vs Bloodiey Demo Week"
 }
