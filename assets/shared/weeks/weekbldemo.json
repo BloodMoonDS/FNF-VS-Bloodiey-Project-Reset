@@ -3,14 +3,18 @@
 	"difficulties": "Hard",
 	"hideFreeplay": false,
 	"weekBackground": "stage",
-	"weekBefore": "tutorial",
 	"freeplayColor": [
 		146,
 		113,
 		253
 	],
+	"weekBefore": "tutorial",
 	"startUnlocked": true,
-	"hideStoryMode": true,
+	"weekCharacters": [
+		"bloodiey",
+		"bf",
+		"gf"
+	],
 	"songs": [
 		[
 			"whiskerlovania",
@@ -29,13 +33,27 @@
 				113,
 				253
 			]
+		],
+		[
+			"kamigami-no-matsuri",
+			"bloodiey",
+			[
+				0,
+				0,
+				255
+			]
+		],
+		[
+			"shinkokuna-neko",
+			"bloodiey-mad",
+			[
+				255,
+				0,
+				0
+			]
 		]
 	],
-	"weekCharacters": [
-		"bloodiey",
-		"bf",
-		"gf"
-	],
-	"hiddenUntilUnlocked": false,
-	"weekName": "Vs Bloodiey Demo Week"
+	"hideStoryMode": true,
+	"weekName": "Vs Bloodiey Demo Week",
+	"hiddenUntilUnlocked": false
 }

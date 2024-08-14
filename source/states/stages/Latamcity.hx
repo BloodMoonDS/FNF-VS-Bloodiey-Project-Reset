@@ -9,8 +9,8 @@ class Latamcity extends BaseStage
 
 	override function create()
 	{
-		var bg:BGSprite = new BGSprite('residencial', -600, -200, 0.9, 0.9);
-		add(bg);
+		var latambg:BGSprite = new BGSprite('residencial', -600, -200, 0.9, 0.9);
+		add(latambg);
 
 		// Spawn your stage sprites here.
 		// Characters are not ready yet on this function, so you can't add things above them yet.
