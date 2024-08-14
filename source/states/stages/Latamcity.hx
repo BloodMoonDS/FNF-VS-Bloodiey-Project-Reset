@@ -27,19 +27,6 @@ class Latamcity extends BaseStage
 		// Code here
 	}
 
-	
-	override function countdownTick(count:Countdown, num:Int)
-	{
-		switch(count)
-		{
-			case THREE: //num 0
-			case TWO: //num 1
-			case ONE: //num 2
-			case GO: //num 3
-			case START: //num 4
-		}
-	}
-
 	// Steps, Beats and Sections:
 	//    curStep, curDecStep
 	//    curBeat, curDecBeat
