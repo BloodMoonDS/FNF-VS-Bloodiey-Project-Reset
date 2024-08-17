@@ -16,7 +16,7 @@ class MainMenuState extends MusicBeatState
 
 	public static var psychEngineVersion:String = '0.7.3'; // This is also used for Discord RPC
 
-	public static var vsBloodieyVer:String = "0.1.0";
+	public static var vsBloodieyVer:String = "0.1.0"; // Vs Bloodiey VErsion used for DLCS
 
 	public static var curSelected:Int = 0;
 	
@@ -26,11 +26,13 @@ class MainMenuState extends MusicBeatState
 		'story_mode',
 		'freeplay',
 		#if MODS_ALLOWED 'mods', #end
+		'dlcs',
 		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
 		#if !switch 'donate', #end
 		'options',
 		#if !switch 'blog' #end
+		
 	];
 
 	var magenta:FlxSprite;
@@ -135,6 +137,8 @@ class MainMenuState extends MusicBeatState
 					menuItem.text = "Blog";
 				case 'donate':
 					menuItem.text = "Donate";
+				case 'dlcs' :
+					menuItem.text = "Downloadable Online Content";
 			}
 			menuItem.setFormat("Segoe UI Symbol", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			add(menuItem);
@@ -252,7 +256,8 @@ class MainMenuState extends MusicBeatState
 							case 'awards':
 								MusicBeatState.switchState(new AchievementsMenuState());
 							#end
-
+							case 'dlcs':
+								MusicBeatState.switchState(new DlcMenuState());
 							case 'credits':
 								MusicBeatState.switchState(new CreditsState());
 							case 'options':
