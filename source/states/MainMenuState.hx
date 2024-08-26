@@ -138,7 +138,7 @@ class MainMenuState extends MusicBeatState
 				case 'donate':
 					menuItem.text = "Donate";
 				case 'dlcs' :
-					menuItem.text = "Downloadable Online Content";
+					menuItem.text = "Bloodiey's art Online";
 			}
 			menuItem.setFormat("Segoe UI Symbol", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			add(menuItem);
