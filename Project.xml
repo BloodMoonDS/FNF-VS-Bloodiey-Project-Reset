@@ -26,7 +26,7 @@
 	<define name="ACHIEVEMENTS_ALLOWED" />
 	<define name="DISCORD_ALLOWED" />
 	<!--<define name="PSYCH_WATERMARKS"/> --><!-- DELETE THIS TO REMOVE WATERMARKS/DEV NAMES ON TITLE SCREEN -->
-
+	<define name="EXPERIMENTAL_CHARACTERISTICS" if="experimental"/>
 	<section if="officialBuild">
 		<define name="TITLE_SCREEN_EASTER_EGG"/>
 		
@@ -97,7 +97,7 @@
 	<haxelib name="tjson" />
 
 	<!-- Vs Bloodiey Exclusive -->
-
+	<haxelib name="format" />
 	<haxelib name="hxcpp" if="desktop"/>
 	<haxelib name="http-socket" if="desktop"/>
 	<haxelib name="hldx" if="desktop"/>

@@ -26,12 +26,13 @@ class MainMenuState extends MusicBeatState
 		'story_mode',
 		'freeplay',
 		#if MODS_ALLOWED 'mods', #end
+		#if !switch 'blog', #end
 		'dlcs',
 		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
 		#if !switch 'donate', #end
 		'options',
-		#if !switch 'blog' #end
+		
 		
 	];
 

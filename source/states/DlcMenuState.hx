@@ -20,6 +20,17 @@ import flixel.util.FlxSpriteUtil;
 import objects.AttachedSprite;
 import options.ModSettingsSubState;
 import flixel.addons.transition.FlxTransitionableState;
+import openfl.net.URLLoader;
+import openfl.net.URLRequest;
+import openfl.net.URLLoaderDataFormat;
+import openfl.events.Event;
+import haxe.io.Bytes;
+import format.zip.Reader;
+import haxe.io.BytesInput;
+import sys.io.File;
+import sys.io.FileOutput;
+import sys.FileSystem;
+
 
 class DlcMenuState extends MusicBeatState
 {
@@ -48,9 +59,14 @@ class DlcMenuState extends MusicBeatState
 		}
 		loadJSONFromURL(DlcDir);
 		trace(DlcDir);
-		// trace(DlcJson);
+		//trace(DlcJson);
 		//trace(JsonDat);
-
+		var mytext:FlxText = new FlxText();
+		mytext.setFormat("Segoe UI Symbol", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		mytext.text = "COMING SOON!!!!";
+		mytext.x = 32;
+		mytext.y = 32;
+		add(mytext);
 	}
 	override function update(elapsed:Float)
 	{
@@ -88,4 +104,8 @@ class DlcMenuState extends MusicBeatState
 
         // Aquí puedes hacer lo que necesites con los datos JSON
     }
+
+	
+
+
 }
