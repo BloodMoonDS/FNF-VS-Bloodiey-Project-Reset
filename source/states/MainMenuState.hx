@@ -19,7 +19,7 @@ class MainMenuState extends MusicBeatState
 	public static var vsBloodieyVer:String = "0.1.0"; // Vs Bloodiey VErsion used for DLCS
 
 	public static var curSelected:Int = 0;
-	
+	public static var mustoplay:Int = 1;
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
 	var optionShit:Array<String> = [
@@ -42,7 +42,7 @@ class MainMenuState extends MusicBeatState
 	static function randomMusic()
 	{
 		var mus =  new FlxRandom();
-		var mustoplay = mus.int(1,3);
+		mustoplay = mus.int(1,3);
 		trace(mustoplay);
 		FlxG.sound.playMusic(Paths.music('frutigeraero$mustoplay'), 0);
 	}

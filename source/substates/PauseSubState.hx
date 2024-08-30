@@ -1,5 +1,6 @@
 package substates;
 
+import states.MainMenuState;
 import backend.WeekData;
 import backend.Highscore;
 import backend.Song;
@@ -316,7 +317,9 @@ class PauseSubState extends MusicBeatSubstate
 					else 
 						MusicBeatState.switchState(new FreeplayState());
 
-					FlxG.sound.playMusic(Paths.music('freakyMenu'));
+					var msgtpl = MainMenuState.mustoplay;
+
+					FlxG.sound.playMusic(Paths.music('frutigeraero$msgtpl'));
 					PlayState.changedDifficulty = false;
 					PlayState.chartingMode = false;
 					FlxG.camera.followLerp = 0;
