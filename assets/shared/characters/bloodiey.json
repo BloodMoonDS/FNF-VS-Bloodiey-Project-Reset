@@ -1,83 +1,84 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
-				-121,
-				-87
+				186,
+				-11
 			],
-			"loop": true,
+			"anim": "chargeFoward",
 			"fps": 24,
-			"anim": "singLEFT",
-			"indices": [],
-			"name": "BloodieyCat_Left"
+			"name": "BloodieyCat_Attack",
+			"indices": []
 		},
 		{
 			"offsets": [
-				-135,
-				-96
+				189,
+				-16
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "singDOWN",
 			"indices": [],
-			"name": "BloodieyCat_Down"
+			"name": "Bloodiey_Note_Down"
 		},
 		{
 			"offsets": [
-				-134,
-				-70
+				72,
+				10
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "singUP",
 			"indices": [],
-			"name": "BloodieyCat_Up"
+			"name": "Bloodiey_Note_Up"
 		},
 		{
 			"offsets": [
-				-151,
-				-86
+				82,
+				-14
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHT",
 			"indices": [],
-			"name": "BloodieyCat_Right"
+			"name": "Bloodiey_Note_Right"
 		},
 		{
 			"offsets": [
-				-134,
-				-89
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "chargeFoward",
-			"indices": [],
-			"name": "BloodieyCat_Attack"
-		},
-		{
-			"offsets": [
-				-131,
-				-86
+				82,
+				-14
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "attack",
 			"indices": [],
-			"name": "BloodieyCat_Attack"
+			"name": "Bloodiey_Attack"
 		},
 		{
-			"loop": true,
+			"loop": false,
 			"offsets": [
-				-136,
-				-88
+				191,
+				-12
 			],
-			"anim": "idle",
+			"anim": "singLEFT",
 			"fps": 24,
-			"name": "BloodieyCat_Idle",
+			"name": "Bloodiey_Note_Left",
 			"indices": []
+		},
+		{
+			"offsets": [
+				192,
+				-12
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "Bloodiey_Idle"
 		}
 	],
+	"vocals_file": "",
 	"no_antialiasing": false,
 	"image": "characters/Bloodiey_Assets",
 	"position": [
@@ -96,5 +97,6 @@
 		10
 	],
 	"sing_duration": 4,
-	"scale": 1
+	"scale": 1,
+	"_editor_isPlayer": false
 }
