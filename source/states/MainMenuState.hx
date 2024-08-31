@@ -139,7 +139,7 @@ class MainMenuState extends MusicBeatState
 				case 'donate':
 					menuItem.text = "Donate";
 				case 'dlcs' :
-					menuItem.text = "Bloodiey's art Online";
+					menuItem.text = "Downloadable Content";
 			}
 			menuItem.setFormat("Segoe UI Symbol", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			add(menuItem);
@@ -229,7 +229,7 @@ class MainMenuState extends MusicBeatState
 				}
 				if (optionShit[curSelected] == 'blog')
 				{
-						CoolUtil.browserLoad('http://bloodieysart.rf.gd/');
+					CoolUtil.browserLoad('http://bloodieysart.rf.gd/');
 				}
 				else
 				{
