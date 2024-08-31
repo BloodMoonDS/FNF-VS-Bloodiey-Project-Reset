@@ -30,7 +30,7 @@ class MainMenuState extends MusicBeatState
 		'dlcs',
 		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
-		#if !switch 'donate', #end
+		#if officialbuild 'donate', #end
 		'options',
 		
 		
@@ -257,8 +257,11 @@ class MainMenuState extends MusicBeatState
 							case 'awards':
 								MusicBeatState.switchState(new AchievementsMenuState());
 							#end
+							#if !switch
 							case 'dlcs':
+							
 								MusicBeatState.switchState(new DlcMenuState());
+							#end
 							case 'credits':
 								MusicBeatState.switchState(new CreditsState());
 							case 'options':
