@@ -52,7 +52,6 @@ class MainMenuState extends MusicBeatState
 		
 		randomMusic();
 
-
 		MODTHttp.onData=function(data:String)
 		{
 			MOTDText = data;
@@ -142,6 +141,7 @@ class MainMenuState extends MusicBeatState
 					menuItem.text = "Downloadable Content";
 			}
 			menuItem.setFormat("Segoe UI Symbol", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			menuItem.antialiasing = true;
 			add(menuItem);
 			
 			
@@ -175,6 +175,7 @@ class MainMenuState extends MusicBeatState
 		var messageoftheday:FlxText = new FlxText(12,32, 0, "Message of the day:\n" + MOTDText, 24);
 		messageoftheday.scrollFactor.set();
 		messageoftheday.setFormat("Segoe UI Emoji", 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		messageoftheday.antialiasing = true;
 		add(messageoftheday);
 		changeItem();
 
