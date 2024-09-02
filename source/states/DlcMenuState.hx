@@ -17,8 +17,9 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.app.Application;
 import sys.thread.Thread;
+#if windows
 import webview.WebView;
-
+#end
 import openfl.net.URLLoader;
 import openfl.net.URLRequest;
 import openfl.net.URLRequestMethod;
@@ -115,6 +116,7 @@ class DlcMenuState extends MusicBeatState
 			trace('error: $error');
 		}
 		DlcStoreHttp.request();
+		#if windows
 		Thread.createWithEventLoop(() ->
 		{
 			var Viewer:WebView = new WebView(#if debug true #end);
@@ -144,7 +146,9 @@ class DlcMenuState extends MusicBeatState
 
 			Viewer.run();
 		});
-
+		#else
+		CoolUtil.browserLoad("https://bloodmoonds.github.io/vs-bloodiey-modstore/");
+		#end
 		//add(spinning = new FlxSprite(0, 0).makeGraphic(100, 100, FlxColor.WHITE));
 		//spinning.screenCenter();
 
@@ -172,8 +176,10 @@ class DlcMenuState extends MusicBeatState
 
 		
 	}
+	#if windows
 	private function formatString(s:String):String
 	{
 		return s.substring(1, s.length - 1);
 	}
+	#end
 }
