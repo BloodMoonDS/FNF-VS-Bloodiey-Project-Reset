@@ -7,6 +7,7 @@ import flixel.effects.FlxFlicker;
 import lime.app.Application;
 import states.editors.MasterEditorMenu;
 import options.OptionsState;
+import states.PasswordState;
 
 class MainMenuState extends MusicBeatState
 {
@@ -30,6 +31,7 @@ class MainMenuState extends MusicBeatState
 		'dlcs',
 		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
+		#if EXPERIMENTAL_FEATURES'password', #end
 		#if officialbuild 'donate', #end
 		'options',
 		
@@ -139,6 +141,8 @@ class MainMenuState extends MusicBeatState
 					menuItem.text = "Donate";
 				case 'dlcs' :
 					menuItem.text = "Downloadable Content";
+				case 'password':
+					menuItem.text = "Password";
 			}
 			menuItem.setFormat("Segoe UI Symbol", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			menuItem.antialiasing = true;
@@ -274,7 +278,8 @@ class MainMenuState extends MusicBeatState
 									PlayState.SONG.splashSkin = null;
 									PlayState.stageUI = 'normal';
 								}
-							
+							case 'password':
+								MusicBeatState.switchState(new PasswordState());
 						}
 					});
 
