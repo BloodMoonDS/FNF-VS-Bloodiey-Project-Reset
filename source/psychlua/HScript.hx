@@ -313,7 +313,7 @@ class HScript extends SScript
 			varsToBring = null;
 		}
 	}
-
+	
 	public function executeCode(?funcToRun:String = null, ?funcArgs:Array<Dynamic> = null):TeaCall {
 		if (funcToRun == null) return null;
 

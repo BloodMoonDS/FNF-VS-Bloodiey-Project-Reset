@@ -21,7 +21,7 @@ class CreditsState extends MusicBeatState
 	override function create()
 	{
 
-		FlxG.sound.playMusic(Paths.music('frutigeraero2'), 0);
+		FlxG.sound.playMusic(Paths.music('nostalgia'), 0);
 
 
 		#if DISCORD_ALLOWED
@@ -43,6 +43,9 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var defaultList:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
+			['Vs Bloodiey Main Team'],
+			['Bloodiey',		'bloodiey',		'Main Programmer and Head of Vs Bloodiey mod',					 'https://www.youtube.com/@BloodieyTheCat',		'00ccfe'],
+			[''],
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer and Head of Psych Engine',					 'https://ko-fi.com/shadowmario',		'444444'],
 			['Riveren',				'riveren',			'Main Artist/Animator of Psych Engine',						 'https://twitter.com/riverennn',		'14967B'],
