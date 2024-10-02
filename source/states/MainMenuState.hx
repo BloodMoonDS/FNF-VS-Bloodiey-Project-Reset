@@ -8,6 +8,7 @@ import lime.app.Application;
 import states.editors.MasterEditorMenu;
 import options.OptionsState;
 import states.PasswordState;
+import flash.system.System;
 
 class MainMenuState extends MusicBeatState
 {
@@ -34,6 +35,7 @@ class MainMenuState extends MusicBeatState
 		#if EXPERIMENTAL_FEATURES'password', #end
 		#if officialbuild 'donate', #end
 		'options',
+		'exit',
 		
 		
 	];
@@ -143,6 +145,8 @@ class MainMenuState extends MusicBeatState
 					menuItem.text = "Downloadable Content";
 				case 'password':
 					menuItem.text = "Password";
+				case 'exit':
+					menuItem.text = "Exit";
 			}
 			menuItem.setFormat("Segoe UI Symbol", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			menuItem.antialiasing = true;
@@ -280,6 +284,9 @@ class MainMenuState extends MusicBeatState
 								}
 							case 'password':
 								MusicBeatState.switchState(new PasswordState());
+							case 'exit':
+								System.exit(0);
+
 						}
 					});
 
