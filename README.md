@@ -5,4 +5,10 @@ in this mod you can face a anthropomorphic cat which is a nice cat Lol
 
 This mod makes some modifications to the OG psych Engine so I can add more content easily
 
-> no screenshots yet
+## Screenshots
+
+![puto](art/screenshots/1%20(9).png)
+
+![puto](art/screenshots/1%20(2).png)
+
+![puto](art/screenshots/1%20(3).png)
