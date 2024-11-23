@@ -161,7 +161,7 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.addByPrefix('selected', '$name selected', 24, true);
 		}
 		else{
-			menuItem.frames = Paths.getSparrowAtlas('hud/Buttons');
+			menuItem.frames = Paths.getSparrowAtlas('hud/button');
 			menuItem.animation.addByPrefix('idle',"button-idle");
 			menuItem.animation.addByPrefix('selected',"button-select");
 		}
@@ -374,7 +374,7 @@ class MainMenuState extends MusicBeatState
 							#end
 
 							#if ACHIEVEMENTS_ALLOWED
-							case 'awards':
+							case 'achievements':
 								MusicBeatState.switchState(new AchievementsMenuState());
 							#end
 							#if !switch
