@@ -83,7 +83,7 @@ function onSongStart()
     runTimer("creditDisplay",curSongTable[3],1)
  else
 
-    debugPrint("Song does not exist within the song data table")
+    --debugPrint("Song does not exist within the song data table")
 
  end
 end
