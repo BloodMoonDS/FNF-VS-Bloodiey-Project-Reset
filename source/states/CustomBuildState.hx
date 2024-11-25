@@ -9,13 +9,13 @@ class CustomBuildState extends MusicBeatState
 	{
 		super.create();
 
-		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('aquaBGDarkBlue'));
 		add(bg);
 
 		warnText = new FlxText(0, 0, FlxG.width,
 			"This Mod Uses A Modified Build of Psych Engine 1.0\n
 			So Many of the stuff here wont work on the official build",32);
-		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
+		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		warnText.screenCenter(Y);
 		add(warnText);
 	}

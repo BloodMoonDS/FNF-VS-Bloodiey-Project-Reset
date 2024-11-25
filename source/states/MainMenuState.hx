@@ -8,7 +8,7 @@ import states.editors.MasterEditorMenu;
 import options.OptionsState;
 import states.DlcMenuState;
 import flash.system.System;
-
+import states.ExtrasState;
 enum MainMenuColumn {
 	LEFT;
 	CENTER;
@@ -36,7 +36,7 @@ class MainMenuState extends MusicBeatState
 		'story_mode',
 		'freeplay',
 		#if MODS_ALLOWED 'mods', #end
-		'dlcs',
+		'extras',
 		'credits',
 		'exit'
 	];
@@ -188,6 +188,8 @@ class MainMenuState extends MusicBeatState
 				case 'donate':
 					MenuText.text = "Donate";
 				case 'dlcs' :
+					MenuText.text = "Downloadable Content";
+				case 'extras' :
 					MenuText.text = "Downloadable Content";
 				case 'password':
 					MenuText.text = "Password";
@@ -381,6 +383,9 @@ class MainMenuState extends MusicBeatState
 							case 'dlcs':
 							
 								MusicBeatState.switchState(new DlcMenuState());
+							case 'extras':
+							
+								MusicBeatState.switchState(new ExtrasState());
 							#end
 							case 'credits':
 								MusicBeatState.switchState(new CreditsState());
