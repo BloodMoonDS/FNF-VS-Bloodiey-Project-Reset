@@ -44,7 +44,7 @@ class ExtrasState extends MusicBeatState
 
 	override function create()
 	{
-		FlxG.sound.playMusic(Paths.music(''), 0);
+		FlxG.sound.playMusic(Paths.music('opal'), 0);
 
 	}
 	override function update(elapsed):Void

@@ -36,7 +36,9 @@ class MainMenuState extends MusicBeatState
 		'story_mode',
 		'freeplay',
 		#if MODS_ALLOWED 'mods', #end
+		#if EXPERIMENTAL_FEATURES 
 		'extras',
+		#else 'dlcs', #end
 		'credits',
 		'exit'
 	];
