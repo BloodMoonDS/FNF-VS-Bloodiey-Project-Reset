@@ -2858,13 +2858,50 @@ class PlayState extends MusicBeatState
 		stagesFunc(function(stage:BaseStage) stage.noteMissPress(direction));
 		callOnScripts('noteMissPress', [direction]);
 	}
-
+	
+	public function createblast(posX:Float, posY:Float):Void
+	{
+			var Blast = new FlxSprite(dad.x + posX,dad.y + posY);
+			Blast.antialiasing = ClientPrefs.data.antialiasing;
+			Blast.frames = Paths.getSparrowAtlas('VFX/Quick Flash');
+			Blast.animation.addByPrefix('shoot', 'FlashDash', 24, false);
+			Blast.animation.play('shoot', true);
+			Blast.animation.curAnim.finish();
+			var timer = new haxe.Timer(5000);
+			timer.run = function() 
+			{
+				Blast.destroy();
+			}
+	}
+	function onCustomNoteHit(note:Note)
+	{
+		switch(note.noteType){
+			case 'Power Note':
+				FlxG.sound.play(Paths.sound('blasttrow'));
+				FlxG.sound.play(Paths.sound('impact'));
+				createblast(30,30);
+				if(boyfriend.hasAnimation('hurt'))
+				{
+					boyfriend.playAnim('hurt', true);
+					boyfriend.specialAnim = true;
+				}
+				if(dad.hasAnimation('attack'))
+				{
+					dad.playAnim('attack',true);
+					dad.specialAnim = true;
+				}
+		}
+		#if LUA_ALLOWED
+		var result:Dynamic = callOnLuas('customNoteMiss', [notes.members.indexOf(note), note.noteData, note.noteType, note.isSustainNote]);
+		#end
+	}
 	function noteMissCommon(direction:Int, note:Note = null)
 	{
 		// score and data
 		var subtract:Float = pressMissDamage;
 		if(note != null) subtract = note.missHealth;
-
+		
+		
 		// GUITAR HERO SUSTAIN CHECK LOL!!!!
 		if (note != null && guitarHeroSustains && note.parent == null) {
 			if(note.tail.length > 0) {
@@ -2925,17 +2962,25 @@ class PlayState extends MusicBeatState
 
 		if(char != null && (note == null || !note.noMissAnimation) && char.hasMissAnimations)
 		{
-			var postfix:String = '';
-			if(note != null) postfix = note.animSuffix;
-
-			var animToPlay:String = singAnimations[Std.int(Math.abs(Math.min(singAnimations.length-1, direction)))] + 'miss' + postfix;
-			char.playAnim(animToPlay, true);
-
-			if(char != gf && lastCombo > 5 && gf != null && gf.hasAnimation('sad'))
+			if(!note.customNote)
 			{
-				gf.playAnim('sad');
-				gf.specialAnim = true;
+				var postfix:String = '';
+				if(note != null) postfix = note.animSuffix;
+
+				var animToPlay:String = singAnimations[Std.int(Math.abs(Math.min(singAnimations.length-1, direction)))] + 'miss' + postfix;
+				char.playAnim(animToPlay, true);
+
+				if(char != gf && lastCombo > 5 && gf != null && gf.hasAnimation('sad'))
+				{
+					gf.playAnim('sad');
+					gf.specialAnim = true;
+				}
 			}
+			else //put any code that Will replace the note animation/action here used For Power Note
+			{
+				onCustomNoteHit(note);
+			}
+			
 		}
 		vocals.volume = 0;
 	}
@@ -2987,7 +3032,20 @@ class PlayState extends MusicBeatState
 
 		if (!note.isSustainNote) invalidateNote(note);
 	}
-
+	public function PowerNoteGood():Void
+	{
+		FlxG.sound.play(Paths.sound('blasttrow'));
+		if(boyfriend.hasAnimation('dodge'))
+		{
+			boyfriend.playAnim('dodge', true);
+			boyfriend.specialAnim = true;
+		}
+		if(dad.hasAnimation('attack'))
+		{
+			dad.playAnim('attack',true);
+			dad.specialAnim = true;
+		}
+	}
 	public function goodNoteHit(note:Note):Void
 	{
 		if(note.wasGoodHit) return;
@@ -3009,6 +3067,7 @@ class PlayState extends MusicBeatState
 
 		if(!note.hitCausesMiss) //Common notes
 		{
+			
 			if(!note.noAnimation)
 			{
 				var animToPlay:String = singAnimations[Std.int(Math.abs(Math.min(singAnimations.length-1, note.noteData)))] + note.animSuffix;
@@ -3044,6 +3103,27 @@ class PlayState extends MusicBeatState
 						}
 					}
 				}
+				if(note.customNote) // this will detect if its a custom note, used for powernote
+				{
+					if(note.noteType == 'Power Note'){
+					
+					
+						FlxG.sound.play(Paths.sound('blasttrow'));
+						if(boyfriend.hasAnimation('dodge'))
+						{
+							boyfriend.playAnim('dodge', true);
+							boyfriend.specialAnim = true;
+						}
+						if(dad.hasAnimation('attack'))
+						{
+							dad.playAnim('attack',true);
+							dad.specialAnim = true;
+						}
+						
+					}
+					var result:Dynamic = callOnLuas('CustomNoteHit', [notes.members.indexOf(note), leData, leType, isSus]);
+				}
+				
 			}
 
 			if(!cpuControlled)
@@ -3206,7 +3286,7 @@ class PlayState extends MusicBeatState
 		if (dad != null && beat % dad.danceEveryNumBeats == 0 && !dad.getAnimationName().startsWith('sing') && !dad.stunned)
 			dad.dance();
 	}
-
+	
 	public function playerDance():Void
 	{
 		var anim:String = boyfriend.getAnimationName();

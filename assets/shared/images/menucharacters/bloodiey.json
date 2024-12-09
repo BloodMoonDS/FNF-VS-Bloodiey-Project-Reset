@@ -1,10 +1,10 @@
 {
-	"idle_anim": "Menu_BloodieyCat_Idle",
-	"image": "BloodieyM",
+	"idle_anim": "Bloodiey_Menu_Idle",
+	"image": "Bloodiey_Menu",
 	"position": [
 		100,
 		150
 	],
 	"scale": 0.5,
-	"confirm_anim": "Menu_BloodieyCat_Idle"
+	"confirm_anim": "Bloodiey_Menu_Idle"
 }
