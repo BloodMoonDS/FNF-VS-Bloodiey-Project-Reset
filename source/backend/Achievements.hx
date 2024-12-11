@@ -50,6 +50,9 @@ class Achievements {
 		createAchievement('toastie',				{name: "Toaster Gamer", description: "Have you tried to run the game on a toaster?"});
 		createAchievement('debugger',				{name: "Debugger", description: "Beat the \"Test\" Stage from the Chart Editor.", hidden: true});
 		createAchievement('pessy_easter_egg',		{name: "Engine Gal Pal", description: "Teehee, you found me~!", hidden: true});
+		createAchievement('silly_cat',				{name: "Beat the silly cat", description: "Beat Week BL Part 1 With no misses", hidden: false});
+		createAchievement('kachinga',				{name: "Kachinga Tu Madre", description: "Miss a powernote", hidden: true});
+		
 		
 		//dont delete this thing below
 		_originalLength = _sortID + 1;

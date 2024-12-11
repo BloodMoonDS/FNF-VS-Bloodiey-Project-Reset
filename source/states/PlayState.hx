@@ -35,7 +35,7 @@ import openfl.filters.ShaderFilter;
 #end
 
 import objects.VideoSprite;
-
+import backend.Achievements;
 import objects.Note.EventNote;
 import objects.*;
 import states.stages.*;
@@ -2890,6 +2890,8 @@ class PlayState extends MusicBeatState
 					dad.playAnim('attack',true);
 					dad.specialAnim = true;
 				}
+				// Gets an achievement
+				Achievements.unlock('kachinga');
 		}
 		#if LUA_ALLOWED
 		var result:Dynamic = callOnLuas('customNoteMiss', [notes.members.indexOf(note), note.noteData, note.noteType, note.isSustainNote]);
