@@ -50,7 +50,7 @@ class Achievements {
 		createAchievement('toastie',				{name: "Toaster Gamer", description: "Have you tried to run the game on a toaster?"});
 		createAchievement('debugger',				{name: "Debugger", description: "Beat the \"Test\" Stage from the Chart Editor.", hidden: true});
 		createAchievement('pessy_easter_egg',		{name: "Engine Gal Pal", description: "Teehee, you found me~!", hidden: true});
-		createAchievement('silly_cat',				{name: "Beat The Silly Cat", description: "Beat Week BL Part 1 on Hard With no misses", hidden: false});
+		createAchievement('weekbl_nomiss',				{name: "Beat The Silly Cat", description: "Beat Week BL Part 1 on Hard With no misses", hidden: false});
 		createAchievement('kachinga',				{name: "Kachinga Tu Madre", description: "Miss a powernote", hidden: true});
 
 		
@@ -157,7 +157,7 @@ class Achievements {
 		var time:Int = openfl.Lib.getTimer();
 		if(Math.abs(time - _lastUnlock) >= 100) //If last unlocked happened in less than 100 ms (0.1s) ago, then don't play sound
 		{
-			FlxG.sound.play(Paths.sound('confirmMenu'), 0.5);
+			FlxG.sound.play(Paths.sound('achievement_Bloodiey'), 0.5);
 			_lastUnlock = time;
 		}
 
