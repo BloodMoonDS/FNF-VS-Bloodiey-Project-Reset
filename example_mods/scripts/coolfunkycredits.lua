@@ -24,7 +24,7 @@ local songdata = {
         '7', 
     },
     ['anxious-cat'] = {
-        'Anxious Cat,
+        'Anxious Cat',
         'Bloodiey',
         '7', 
     },

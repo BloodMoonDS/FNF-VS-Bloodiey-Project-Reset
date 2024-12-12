@@ -1,100 +1,71 @@
 {
 	"animations": [
 		{
-			"offsets": [
-				-121,
-				-87
-			],
-			"loop": true,
+			"loop": false,
+			"offsets": [117, -72],
+			"anim": "chargeFoward",
 			"fps": 24,
-			"anim": "singLEFT",
-			"indices": [],
-			"name": "BloodieyCat_Left"
+			"name": "BloodieyCat_Attack",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-135,
-				-96
-			],
+			"offsets": [105, -76],
 			"loop": false,
 			"fps": 24,
 			"anim": "singDOWN",
 			"indices": [],
-			"name": "BloodieyCat_Down"
+			"name": "Bloodiey_Note_Down"
 		},
 		{
-			"offsets": [
-				-134,
-				-70
-			],
+			"offsets": [87, -33],
 			"loop": false,
 			"fps": 24,
 			"anim": "singUP",
 			"indices": [],
-			"name": "BloodieyCat_Up"
+			"name": "Bloodiey_Note_Up"
 		},
 		{
-			"offsets": [
-				-151,
-				-86
-			],
+			"offsets": [86, -73],
 			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHT",
 			"indices": [],
-			"name": "BloodieyCat_Right"
+			"name": "Bloodiey_Note_Right"
 		},
 		{
-			"offsets": [
-				-134,
-				-89
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "chargeFoward",
-			"indices": [],
-			"name": "BloodieyCat_Attack"
-		},
-		{
-			"offsets": [
-				-131,
-				-86
-			],
+			"offsets": [164, -68],
 			"loop": false,
 			"fps": 24,
 			"anim": "attack",
 			"indices": [],
-			"name": "BloodieyCat_Attack"
+			"name": "Bloodiey_Attack"
 		},
 		{
-			"loop": true,
-			"offsets": [
-				-136,
-				-88
-			],
-			"anim": "idle",
+			"loop": false,
+			"offsets": [121, -70],
+			"anim": "singLEFT",
 			"fps": 24,
-			"name": "BloodieyCat_Idle",
+			"name": "Bloodiey_Note_Left",
 			"indices": []
+		},
+		{
+			"offsets": [123, -72],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Bloodiey_Idle"
 		}
 	],
+	"vocals_file": "",
 	"no_antialiasing": false,
 	"image": "characters/Bloodiey_Mad",
-	"position": [
-		0,
-		40
-	],
-	"healthicon": "bloodiey-mad",
+	"position": [0, 40],
+	"healthicon": "bloodiey",
 	"flip_x": false,
-	"healthbar_colors": [
-		0,
-		160,
-		255
-	],
-	"camera_position": [
-		80,
-		10
-	],
+	"healthbar_colors": [0, 160, 255],
+	"camera_position": [80, 10],
 	"sing_duration": 4,
-	"scale": 1
+	"scale": 1,
+	"_editor_isPlayer": false
 }
