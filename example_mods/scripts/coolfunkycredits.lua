@@ -23,6 +23,11 @@ local songdata = {
         'Bloodiey',
         '7', 
     },
+    ['anxious-cat'] = {
+        'Anxious Cat,
+        'Bloodiey',
+        '7', 
+    },
 
 
 -- Replace this data with your songs and the song composer. 
