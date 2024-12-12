@@ -1,101 +1,70 @@
 {
 	"animations": [
 		{
+			"offsets": [117, -72],
 			"loop": false,
-			"offsets": [
-				186,
-				-11
-			],
+			"fps": 24,
 			"anim": "chargeFoward",
-			"fps": 24,
-			"name": "BloodieyCat_Attack",
-			"indices": []
+			"indices": [],
+			"name": "BloodieyCat_Attack"
 		},
 		{
-			"offsets": [
-				189,
-				-16
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [105, -76],
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Bloodiey_Note_Down"
-		},
-		{
-			"offsets": [
-				72,
-				10
-			],
-			"loop": false,
 			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "Bloodiey_Note_Up"
-		},
-		{
-			"offsets": [
-				82,
-				-14
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Bloodiey_Note_Right"
-		},
-		{
-			"offsets": [
-				82,
-				-14
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "attack",
-			"indices": [],
-			"name": "Bloodiey_Attack"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				191,
-				-12
-			],
-			"anim": "singLEFT",
-			"fps": 24,
-			"name": "Bloodiey_Note_Left",
+			"name": "Bloodiey_Note_Down",
 			"indices": []
 		},
 		{
-			"offsets": [
-				192,
-				-12
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "idle",
 			"loop": false,
-			"name": "Bloodiey_Idle"
+			"offsets": [87, -33],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Bloodiey_Note_Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [86, -73],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Bloodiey_Note_Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [164, -68],
+			"anim": "attack",
+			"fps": 24,
+			"name": "Bloodiey_Attack",
+			"indices": []
+		},
+		{
+			"offsets": [121, -70],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Bloodiey_Note_Left"
+		},
+		{
+			"loop": false,
+			"offsets": [123, -72],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Bloodiey_Idle",
+			"indices": []
 		}
 	],
 	"vocals_file": "",
 	"no_antialiasing": false,
 	"image": "characters/Bloodiey_Assets",
-	"position": [
-		0,
-		40
-	],
+	"position": [0, 40],
 	"healthicon": "bloodiey",
 	"flip_x": false,
-	"healthbar_colors": [
-		0,
-		160,
-		255
-	],
-	"camera_position": [
-		80,
-		10
-	],
+	"healthbar_colors": [0, 160, 255],
+	"camera_position": [80, 10],
 	"sing_duration": 4,
 	"scale": 1,
 	"_editor_isPlayer": false

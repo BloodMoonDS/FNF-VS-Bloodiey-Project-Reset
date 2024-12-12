@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Bloodiey_Dialogue_assets.png">
+	<!-- Created with Adobe Animate version 19.2.1.408 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Bloodiey_Mad0000" x="1350" y="2" width="440" height="661" frameX="0" frameY="0" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Mad0001" x="1350" y="2" width="440" height="661" frameX="0" frameY="0" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Mad0002" x="457" y="657" width="449" height="653" frameX="0" frameY="-8" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Mad0003" x="457" y="657" width="449" height="653" frameX="0" frameY="-8" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Mad0004" x="2" y="652" width="453" height="648" frameX="0" frameY="-13" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Mad0005" x="2" y="652" width="453" height="648" frameX="0" frameY="-13" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Scared0000" x="908" y="665" width="440" height="661" frameX="0" frameY="0" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Scared0001" x="908" y="665" width="440" height="661" frameX="0" frameY="0" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Scared0002" x="457" y="1312" width="449" height="653" frameX="0" frameY="-8" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Scared0003" x="457" y="1312" width="449" height="653" frameX="0" frameY="-8" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Scared0004" x="2" y="1302" width="453" height="648" frameX="0" frameY="-13" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Scared0005" x="2" y="1302" width="453" height="648" frameX="0" frameY="-13" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Talk0000" x="908" y="2" width="440" height="661" frameX="0" frameY="0" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Talk0001" x="908" y="2" width="440" height="661" frameX="0" frameY="0" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Talk0002" x="457" y="2" width="449" height="653" frameX="0" frameY="-8" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Talk0003" x="457" y="2" width="449" height="653" frameX="0" frameY="-8" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Talk0004" x="2" y="2" width="453" height="648" frameX="0" frameY="-13" frameWidth="453" frameHeight="661"/>
+	<SubTexture name="Bloodiey_Talk0005" x="2" y="2" width="453" height="648" frameX="0" frameY="-13" frameWidth="453" frameHeight="661"/>
+</TextureAtlas>

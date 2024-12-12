@@ -2,18 +2,18 @@
 <TextureAtlas imagePath="Bloodiey_Menu.png">
 	<!-- Created with Adobe Animate version 19.2.1.408 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="Bloodiey_Menu_Idle0000" x="2" y="2" width="550" height="658" frameX="0" frameY="-31" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0001" x="554" y="2" width="549" height="658" frameX="0" frameY="-31" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0002" x="1105" y="2" width="548" height="658" frameX="-1" frameY="-31" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0003" x="2" y="662" width="540" height="661" frameX="-8" frameY="-28" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0004" x="544" y="662" width="506" height="671" frameX="-37" frameY="-18" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0005" x="2" y="1325" width="466" height="684" frameX="-71" frameY="-5" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0006" x="1052" y="662" width="455" height="688" frameX="-80" frameY="-1" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0007" x="926" y="1352" width="453" height="689" frameX="-81" frameY="0" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0008" x="470" y="1335" width="454" height="689" frameX="-81" frameY="0" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0009" x="470" y="1335" width="454" height="689" frameX="-81" frameY="0" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0010" x="470" y="1335" width="454" height="689" frameX="-81" frameY="0" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0011" x="470" y="1335" width="454" height="689" frameX="-81" frameY="0" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0012" x="470" y="1335" width="454" height="689" frameX="-81" frameY="0" frameWidth="550" frameHeight="689"/>
-	<SubTexture name="Bloodiey_Menu_Idle0013" x="470" y="1335" width="454" height="689" frameX="-81" frameY="0" frameWidth="550" frameHeight="689"/>
+	<SubTexture name="Bloodiey_Menu_Idle0000" x="2" y="2" width="484" height="624" frameX="0" frameY="-24" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0001" x="2" y="2" width="484" height="624" frameX="0" frameY="-24" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0002" x="488" y="2" width="468" height="639" frameX="-22" frameY="-9" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0003" x="488" y="2" width="468" height="639" frameX="-22" frameY="-9" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0004" x="2" y="628" width="457" height="646" frameX="-33" frameY="-2" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0005" x="2" y="628" width="457" height="646" frameX="-33" frameY="-2" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0006" x="2" y="628" width="457" height="646" frameX="-33" frameY="-2" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0007" x="461" y="643" width="453" height="648" frameX="-37" frameY="0" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0008" x="461" y="643" width="453" height="648" frameX="-37" frameY="0" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0009" x="461" y="643" width="453" height="648" frameX="-37" frameY="0" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0010" x="461" y="643" width="453" height="648" frameX="-37" frameY="0" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0011" x="461" y="643" width="453" height="648" frameX="-37" frameY="0" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0012" x="461" y="643" width="453" height="648" frameX="-37" frameY="0" frameWidth="490" frameHeight="648"/>
+	<SubTexture name="Bloodiey_Menu_Idle0013" x="461" y="643" width="453" height="648" frameX="-37" frameY="0" frameWidth="490" frameHeight="648"/>
 </TextureAtlas>
