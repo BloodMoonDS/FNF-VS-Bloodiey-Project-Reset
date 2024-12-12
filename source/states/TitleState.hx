@@ -56,8 +56,10 @@ class TitleState extends MusicBeatState
 
 	var curWacky:Array<String> = [];
 
-	var wackyImage:FlxSprite;
+	var curWocky:Array<String> = [];
 
+	var wackyImage:FlxSprite;
+	var titleExtraText = new FlxText();
 	#if TITLE_SCREEN_EASTER_EGG
 	final easterEggKeys:Array<String> = [
 		'SHADOW', 'RIVEREN', 'BBPANZU', 'PESSY'
@@ -83,7 +85,7 @@ class TitleState extends MusicBeatState
 		}
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
-
+		curWocky = FlxG.random.getObject(getMainTextShit());
 		#if CHECK_FOR_UPDATES
 		if(ClientPrefs.data.checkForUpdates && !closedState) {
 			trace('checking for update');
@@ -167,6 +169,11 @@ class TitleState extends MusicBeatState
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
 
+		
+		titleExtraText.text = curWocky[0];
+		titleExtraText.x = 300;
+		titleExtraText.y = 50;
+		titleExtraText.setFormat("Segoe UI Emoji", 24, FlxColor.YELLOW, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		gfDance = new FlxSprite(gfPosition.x, gfPosition.y);
 		gfDance.antialiasing = ClientPrefs.data.antialiasing;
 		
@@ -238,7 +245,7 @@ class TitleState extends MusicBeatState
 		add(titleText); //"Press Enter to Begin" text
 		add(credGroup);
 		add(ngSpr);
-
+		
 		if (initialized)
 			skipIntro();
 		else
@@ -331,7 +338,24 @@ class TitleState extends MusicBeatState
 				danceRightFrames = [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28];
 		}
 	}
-
+	function getMainTextShit():Array<Array<String>>
+		{
+			#if MODS_ALLOWED
+			var firstArray:Array<String> = Mods.mergeAllTextsNamed('data/mainMenuText.txt');
+			#else
+			var fullText:String = Assets.getText(Paths.txt('mainMenuText'));
+			var firstArray:Array<String> = fullText.split('\n');
+			#end
+			var swagGoodArray:Array<Array<String>> = [];
+	
+			for (i in firstArray)
+			{
+				swagGoodArray.push(i.split('\n'));
+			}
+	
+			return swagGoodArray;
+		}
+	
 	function getIntroTextShit():Array<Array<String>>
 	{
 		#if MODS_ALLOWED
@@ -629,6 +653,7 @@ class TitleState extends MusicBeatState
 					default: //Go back to normal ugly ass boring GF
 						remove(ngSpr);
 						remove(credGroup);
+						add(titleExtraText);
 						FlxG.camera.flash(FlxColor.WHITE, 2);
 						skippedIntro = true;
 
@@ -666,6 +691,8 @@ class TitleState extends MusicBeatState
 			{
 				remove(ngSpr);
 				remove(credGroup);
+				//removed cuz it wont work
+				//add(titleExtraText);
 				FlxG.camera.flash(FlxColor.WHITE, 4);
 
 				var easteregg:String = FlxG.save.data.psychDevsEasterEgg;

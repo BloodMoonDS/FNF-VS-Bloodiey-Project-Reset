@@ -35,7 +35,7 @@ import openfl.filters.ShaderFilter;
 #end
 
 import objects.VideoSprite;
-
+import backend.Achievements;
 import objects.Note.EventNote;
 import objects.*;
 import states.stages.*;
@@ -2890,9 +2890,28 @@ class PlayState extends MusicBeatState
 					dad.playAnim('attack',true);
 					dad.specialAnim = true;
 				}
+				// Gets an achievement
+				Achievements.unlock('kachinga');
 		}
 		#if LUA_ALLOWED
 		var result:Dynamic = callOnLuas('customNoteMiss', [notes.members.indexOf(note), note.noteData, note.noteType, note.isSustainNote]);
+		#end
+	}
+	function onOpponentCustomnoteHit(note:Note)
+	{
+		switch(note.noteType){
+			case 'Power Note':
+				//FlxG.sound.play(Paths.sound('blasttrow'));
+				//FlxG.sound.play(Paths.sound('impact'));
+				createblast(30,30);
+				if(dad.hasAnimation('crazy'))
+				{
+					dad.playAnim('crazy',true);
+					dad.specialAnim = true;
+				}
+		}
+		#if LUA_ALLOWED
+		var result:Dynamic = callOnLuas('customNoteOpponentHit', [notes.members.indexOf(note), note.noteData, note.noteType, note.isSustainNote]);
 		#end
 	}
 	function noteMissCommon(direction:Int, note:Note = null)
@@ -2976,7 +2995,7 @@ class PlayState extends MusicBeatState
 					gf.specialAnim = true;
 				}
 			}
-			else //put any code that Will replace the note animation/action here used For Power Note
+			else 
 			{
 				onCustomNoteHit(note);
 			}
@@ -3000,6 +3019,10 @@ class PlayState extends MusicBeatState
 			dad.playAnim('hey', true);
 			dad.specialAnim = true;
 			dad.heyTimer = 0.6;
+		}
+		if(note.customNote)
+		{
+			onOpponentCustomnoteHit(note);
 		}
 		else if(!note.noAnimation)
 		{
