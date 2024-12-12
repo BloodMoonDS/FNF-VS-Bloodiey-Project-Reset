@@ -35,6 +35,8 @@ class LatamCity extends BaseStage
 	var floatingcube:BGSprite;
 	var floatingcube2:BGSprite;
 	var latambgbad:BGSprite;
+	var latambgFocus:BGSprite;
+	var latambgFocusBad:BGSprite;
 	override function create()
 	{
 		
@@ -43,6 +45,9 @@ class LatamCity extends BaseStage
 		latambgbad = new BGSprite('residencial_bad',-600,-300,1,1);
 		latambgbad.alpha = 0;
 		add(latambgbad);
+		latambgFocus = new BGSprite('residencial_focus',-600,-300,1,1);
+		latambgFocus.alpha = 0;
+		add(latambgFocus);
 		if(!ClientPrefs.data.lowQuality) {
 			//createRandomCubes(); 
 			/*
@@ -81,6 +86,10 @@ class LatamCity extends BaseStage
 				FlxTween.tween(floatingcube,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
 				FlxTween.tween(floatingcube2,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
 				FlxTween.tween(latambgbad,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
+			case 'LatamCity Focus':
+				var valor1 = Std.parseFloat(value1);
+				var valor2 = Std.parseFloat(value2);
+				FlxTween.tween(latambgFocus,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
 		}
 	}	
 	override function createPost()

@@ -1,16 +1,41 @@
 {
-	"song": {
-		"events": [
+	"events": [
+		[
+			48000,
 			[
-				0,
-				[
-					[
-						"Change Scroll Speed",
-						"1.6",
-						"0"
-					]
-				]
+				["LatamCity Focus", "0.2", "1"]
+			]
+		],
+		[
+			60000,
+			[
+				["LatamCity Focus", "0.2", "0"]
+			]
+		],
+		[
+			84000,
+			[
+				["LatamCity Focus", "0.5", "1"]
+			]
+		],
+		[
+			131531.25,
+			[
+				["LatamCity Focus", "0.5", "0"]
+			]
+		],
+		[
+			132000,
+			[
+				["Power Cubes Alpha", "0.5", "1 "]
+			]
+		],
+		[
+			156000,
+			[
+				["Power Cubes Alpha", "0.5", "0"]
 			]
 		]
-	}
+	],
+	"format": "psych_v1"
 }

@@ -84,7 +84,8 @@ class ChartingState extends MusicBeatState implements PsychUIEventHandler.PsychU
 		['Change Scroll Speed', "Value 1: Scroll Speed Multiplier (1 is default)\nValue 2: Time it takes to change fully in seconds."],
 		['Set Property', "Value 1: Variable name\nValue 2: New value"],
 		['Play Sound', "Value 1: Sound file name\nValue 2: Volume (Default: 1), ranges from 0 to 1"],
-		['Power Cubes Alpha', "Value 1: Time In Seconds \n Value 2: alpha of the cubes"]
+		['Power Cubes Alpha', "Value 1: Time In Seconds \n Value 2: alpha of the cubes"],
+		['LatamCity Focus', "Value 1: Time In Seconds \n Value 2: alpha of the backfround"]
 	];
 	
 	public static var keysArray:Array<FlxKey> = [ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT]; //Used for Vortex Editor
