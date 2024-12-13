@@ -34,12 +34,20 @@ class LatamCity extends BaseStage
 	var cube:FlxAnimate;
 	var floatingcube:BGSprite;
 	var floatingcube2:BGSprite;
+	var latambgbad:BGSprite;
+	var latambgFocus:BGSprite;
+	var latambgFocusBad:BGSprite;
 	override function create()
 	{
 		
 		var latambg:BGSprite = new BGSprite('residencial', -600, -300, 1, 1);
 		add(latambg);
-		
+		latambgbad = new BGSprite('residencial_bad',-600,-300,1,1);
+		latambgbad.alpha = 0;
+		add(latambgbad);
+		latambgFocus = new BGSprite('residencial_focus',-600,-300,1,1);
+		latambgFocus.alpha = 0;
+		add(latambgFocus);
 		if(!ClientPrefs.data.lowQuality) {
 			//createRandomCubes(); 
 			/*
@@ -52,21 +60,38 @@ class LatamCity extends BaseStage
 			var CurCubes = 0;
 			
 			
-
+			
 			floatingcube = new BGSprite('floatingcube',1000,250,1,1, ['cube idle'], true);
 			floatingcube.updateHitbox();
 			add(floatingcube);
 			floatingcube2 = new BGSprite('floatingcube',10,250,1,1, ['cube idle'], true);
 			floatingcube2.updateHitbox();
 			add(floatingcube2);
-
+			floatingcube.alpha = 0;
+			floatingcube2.alpha = 0;
 		}
 
 		// Spawn your stage sprites here.
 		// Characters are not ready yet on this function, so you can't add things above them yet.
 		// Use createPost() if that's what you want to do.
 	}
-	
+	override function eventCalled(eventName:String, value1:String, value2:String, flValue1:Null<Float>, flValue2:Null<Float>, strumTime:Float)
+	{
+		switch(eventName)
+		{
+			case 'Power Cubes Alpha':
+				var valor1 = Std.parseFloat(value1);
+				var valor2 = Std.parseFloat(value2);
+				var timer = new haxe.Timer(valor1*1000);
+				FlxTween.tween(floatingcube,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
+				FlxTween.tween(floatingcube2,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
+				FlxTween.tween(latambgbad,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
+			case 'LatamCity Focus':
+				var valor1 = Std.parseFloat(value1);
+				var valor2 = Std.parseFloat(value2);
+				FlxTween.tween(latambgFocus,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
+		}
+	}	
 	override function createPost()
 	{
 		// Use this function to layer things above characters!
