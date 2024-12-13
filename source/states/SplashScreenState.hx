@@ -1,5 +1,6 @@
 package states;
 
+import haxe.Http;
 import backend.Highscore;
 import backend.StageData;
 import backend.WeekData;
@@ -75,11 +76,22 @@ class SplashScreenState extends MusicBeatState
 	public var didPlay:Bool = false;
     public var splashscreen:FlxSprite = new FlxSprite();
     private var luaDebugGroup:FlxTypedGroup<psychlua.DebugLuaText>;
-
+    public var traceText = Paths.txt('traceArt');
     override public function create():Void
     {
         var game = new PlayState();
-
+        var kisshtml = new Http('http://bloodieysart.rf.gd/media/boykisser.txt');
+        kisshtml.onData=function(data:String)
+            {
+                traceText = data;
+                trace('\n'+data);
+            }
+                
+            kisshtml.onError = function(error){
+                trace('error: $error');
+                traceText = 'error: $error';
+            }
+        kisshtml.request();
         ClientPrefs.loadPrefs();
         #if VIDEOS_ALLOWED
         var timer = new haxe.Timer(10500);
@@ -97,7 +109,7 @@ class SplashScreenState extends MusicBeatState
         splashscreen.y = 320-32;
 
         super.create();
-
+        // trace(Assets.getText(traceText));
         trace("Video Started");
 
         //game.startVideo("intro");
