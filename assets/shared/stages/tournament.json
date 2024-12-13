@@ -1,0 +1,42 @@
+{
+	"camera_boyfriend": [
+		-300,
+		-150
+	],
+	"girlfriend": [
+		360,
+		130
+	],
+	"stageUI": "",
+	"boyfriend": [
+		995,
+		100
+	],
+	"objects": [
+		{
+			"type": "gf"
+		},
+		{
+			"type": "dad"
+		},
+		{
+			"type": "boyfriend"
+		}
+	],
+	"camera_girlfriend": [
+		0,
+		0
+	],
+	"defaultZoom": 0.65,
+	"camera_speed": 1,
+	"directory": "weekbl",
+	"opponent": [
+		65,
+		100
+	],
+	"camera_opponent": [
+		300,
+		100
+	],
+	"hide_girlfriend": false
+}

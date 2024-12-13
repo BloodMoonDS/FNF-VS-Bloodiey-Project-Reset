@@ -5,6 +5,8 @@ import states.stages.objects.*;
 import cutscenes.CutsceneHandler;
 import substates.GameOverSubstate;
 import objects.Character;
+import cutscenes.DialogueBoxPsych;
+import states.PlayState;
 
 class LatamCity extends BaseStage
 {
@@ -70,11 +72,25 @@ class LatamCity extends BaseStage
 			floatingcube.alpha = 0;
 			floatingcube2.alpha = 0;
 		}
+		switch (songName)
+		{
+			default:
+				FlxG.sound.playMusic(Paths.music('opal'), 0);
+				FlxG.sound.music.fadeIn(1, 0, 0.8);
+		}
+		if(isStoryMode && !seenCutscene)
+		{
+			
+			
+			
+		}
+		
 
 		// Spawn your stage sprites here.
 		// Characters are not ready yet on this function, so you can't add things above them yet.
 		// Use createPost() if that's what you want to do.
 	}
+
 	override function eventCalled(eventName:String, value1:String, value2:String, flValue1:Null<Float>, flValue2:Null<Float>, strumTime:Float)
 	{
 		switch(eventName)
@@ -138,5 +154,12 @@ class LatamCity extends BaseStage
 		}
 	}
 
+	function latamCityIntro()
+	{
+		
+		
+		
+		
+	}
 	// For events
 }

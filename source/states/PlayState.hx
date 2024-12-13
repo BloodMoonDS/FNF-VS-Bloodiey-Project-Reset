@@ -385,6 +385,7 @@ class PlayState extends MusicBeatState
 			case 'phillyStreets': new PhillyStreets(); 	//Weekend 1 - Darnell, Lit Up, 2Hot
 			case 'phillyBlazin': new PhillyBlazin();	//Weekend 1 - Blazin
 			case 'latamcity': new LatamCity(); //WeekBL
+			case 'tournament': new Tournament(); //WeekBL Part 2
 		}
 		if(isPixelStage) introSoundsSuffix = '-pixel';
 
@@ -478,6 +479,7 @@ class PlayState extends MusicBeatState
 		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 32);
 		timeTxt.setFormat(Paths.font("seguiemj.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
+		timeTxt.antialiasing = ClientPrefs.data.antialiasing;
 		timeTxt.alpha = 0;
 		timeTxt.borderSize = 2;
 		timeTxt.visible = updateTime = showTime;
@@ -546,6 +548,7 @@ class PlayState extends MusicBeatState
 		scoreTxt = new FlxText(0, healthBar.y + 40, FlxG.width, "", 20);
 		scoreTxt.setFormat(Paths.font("seguiemj.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		scoreTxt.scrollFactor.set();
+		scoreTxt.antialiasing = ClientPrefs.data.antialiasing;
 		scoreTxt.borderSize = 1.25;
 		scoreTxt.visible = !ClientPrefs.data.hideHud;
 		updateScore(false);
@@ -554,6 +557,7 @@ class PlayState extends MusicBeatState
 		botplayTxt = new FlxText(400, healthBar.y - 90, FlxG.width - 800, Language.getPhrase("Botplay").toUpperCase(), 32);
 		botplayTxt.setFormat(Paths.font("seguiemj.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
+		botplayTxt.antialiasing = ClientPrefs.data.antialiasing;
 		botplayTxt.borderSize = 1.25;
 		botplayTxt.visible = cpuControlled;
 		uiGroup.add(botplayTxt);
