@@ -1,20 +1,12 @@
 {
 	"dialogue": [
 		{
-			"sound": "",
-			"speed": 0.05,
-			"portrait": "bf",
-			"boxState": "normal",
-			"expression": "talk",
-			"text": "bep boo boo?"
-		},
-		{
 			"sound": "Voices/voice_bloodiey",
 			"speed": 0.05,
 			"portrait": "bloodiey",
 			"boxState": "normal",
-			"expression": "shocked",
-			"text": "you want me to attack you?"
+			"expression": "talk",
+			"text": "Hey that was great ig"
 		},
 		{
 			"sound": "",
@@ -22,15 +14,23 @@
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "excited",
-			"text": "be"
+			"text": "bee boop bo sked"
 		},
 		{
 			"sound": "Voices/voice_bloodiey",
-			"speed": 0.075,
+			"speed": 0.05,
 			"portrait": "bloodiey",
 			"boxState": "normal",
 			"expression": "talk",
-			"text": "Allright just make sure you dodge the attacks"
+			"text": "you want more huh?"
+		},
+		{
+			"sound": "Voices/voice_bloodiey",
+			"speed": 0.05,
+			"portrait": "bloodiey",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Lets start then!"
 		}
 	]
 }

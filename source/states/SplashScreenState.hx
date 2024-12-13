@@ -35,6 +35,7 @@ import openfl.filters.ShaderFilter;
 #end
 
 import objects.VideoSprite;
+import objects.OpenVideoSprite;
 
 import objects.Note.EventNote;
 import objects.*;
@@ -53,8 +54,25 @@ import crowplexus.iris.Iris;
 #end
 import states.TitleState;
 
+import flixel.addons.display.FlxPieDial;
+
+#if hxvlc
+import hxvlc.flixel.FlxVideoSprite;
+#end
+
 class SplashScreenState extends MusicBeatState 
 {
+    final _timeToSkip:Float = 1;
+	public var holdingTime:Float = 0;
+	public var videoSprite:FlxVideoSprite;
+	public var skipSprite:FlxPieDial;
+	public var cover:FlxSprite;
+	public var canSkip:Bool = false;
+
+	private var videoName:String;
+
+	public var waiting:Bool = false;
+	public var didPlay:Bool = false;
     public var splashscreen:FlxSprite = new FlxSprite();
     private var luaDebugGroup:FlxTypedGroup<psychlua.DebugLuaText>;
 
@@ -63,9 +81,11 @@ class SplashScreenState extends MusicBeatState
         var game = new PlayState();
 
         ClientPrefs.loadPrefs();
-        
+        #if VIDEOS_ALLOWED
+        var timer = new haxe.Timer(10500);
+        #else
         var timer = new haxe.Timer(5000);
-        
+        #end
         var haddone = 0;
         splashscreen.loadGraphic(Paths.image("bloodieysart"));
         add(splashscreen);
@@ -83,7 +103,9 @@ class SplashScreenState extends MusicBeatState
         //game.startVideo("intro");
        
         //playSplashAnim("intro");
-        
+        #if VIDEOS_ALLOWED
+            playSplashAnim('intro',false);  
+        #else
             trace("Doing Tween");
             FlxG.sound.play(Paths.sound("bloodieysart"));
             FlxTween.tween(splashscreen,{"scale.x": splashscreen.scale.x*1, "scale.y": splashscreen.scale.y*1, "alpha": 1 } ,1,{ease: FlxEase.circIn, type: ONESHOT, onComplete: section3()  });
@@ -96,7 +118,7 @@ class SplashScreenState extends MusicBeatState
                     MusicBeatState.switchState(new TitleState());
                 }
             }
-            
+        #end
         
         trace("Video ended");
         
@@ -108,6 +130,7 @@ class SplashScreenState extends MusicBeatState
                 MusicBeatState.switchState(new TitleState());
             }
         }
+        
         /*
         trace("Doing Tween");
         FlxG.sound.play(Paths.sound("bloodieysart"));
@@ -140,7 +163,7 @@ class SplashScreenState extends MusicBeatState
         // MusicBeatState.switchState(new TitleState());
         return null;
     }
-    public var videoCutscene:VideoSprite = null;
+    public var videoCutscene:OpenVideoSprite = null;
     public function playSplashAnim(name:String, forMidSong:Bool = false, canSkip:Bool = true, loop:Bool = false, playOnLoad:Bool = true)
         {
             #if VIDEOS_ALLOWED
@@ -158,7 +181,7 @@ class SplashScreenState extends MusicBeatState
     
             if (foundFile)
             {
-                videoCutscene = new VideoSprite(fileName, forMidSong, canSkip, loop);
+                videoCutscene = new OpenVideoSprite(fileName, forMidSong, canSkip, loop);
     
                 // Finish callback
                
