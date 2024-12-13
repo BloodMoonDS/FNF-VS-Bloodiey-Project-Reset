@@ -1,0 +1,44 @@
+{
+	"dialogue": [
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "Sked bo bo!"
+		},
+		{
+			"sound": "Voices/voice_bloodiey",
+			"speed": 0.05,
+			"portrait": "bloodiey",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "I have stuff to do so maybe other time"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Sked be"
+		},
+		{
+			"sound": "Voices/voice_bloodiey",
+			"speed": 0.05,
+			"portrait": "bloodiey",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Lets see ya at the sing tournament tomorrow"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "be"
+		}
+	]
+}
