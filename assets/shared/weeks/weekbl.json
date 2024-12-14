@@ -1,4 +1,11 @@
 {
+	"storyName": "That one silly cat",
+	"difficulties": "Hard",
+	"hideFreeplay": false,
+	"weekBackground": "latamcity",
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"hideStoryMode": false,
 	"songs": [
 		[
 			"kamigami no matsuri",
@@ -11,7 +18,7 @@
 		],
 		[
 			"anxious cat",
-			"Bloodiey",
+			"bloodiey",
 			[
 				0,
 				173,
@@ -28,18 +35,11 @@
 			]
 		]
 	],
-	"hiddenUntilUnlocked": false,
-	"hideFreeplay": false,
-	"weekBackground": "latamcity",
-	"difficulties": "Hard",
 	"weekCharacters": [
 		"bloodiey",
 		"bf",
 		"gf"
 	],
-	"storyName": "That one silly cat",
-	"weekName": "Vs Bloodiey Week Part1",
-	"hideStoryMode": false,
-	"weekBefore": "tutorial",
-	"startUnlocked": true
+	"hiddenUntilUnlocked": false,
+	"weekName": "Vs Bloodiey Week Part1"
 }

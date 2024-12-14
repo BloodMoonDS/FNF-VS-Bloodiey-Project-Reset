@@ -1,0 +1,9 @@
+{
+	"name": "Friday Night Funkin' : vs-Bloodiey Theme",
+	"description": "Theme for Friday Night Funkin",
+	"restart":false,
+	"runsGlobally": true,
+	"color": [170, 0, 255],
+	"discordRPC": "863222024192262205",
+	"iconFramerate": 24
+}
