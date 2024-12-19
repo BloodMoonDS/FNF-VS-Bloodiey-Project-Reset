@@ -66,12 +66,9 @@ class DlcMenuState extends MusicBeatState
 	public var DlcJson:Json;
 	public var jsonString:String;
 	public static var DlcDir:String = "https://raw.githubusercontent.com/BloodMoonDS/BloodMoonDS/main/assets/funkindlcs.json";
-	#if windows
 	public static var DlcStore:String = "https://raw.githubusercontent.com/BloodMoonDS/vs-bloodiey-modstore/refs/heads/main/docs/index.html";
 	public static var VsBloodieyDlcList = "https://raw.githubusercontent.com/BloodMoonDS/BloodMoonDS/main/assets/funkindlclist.txt";
-	#else
-	public static var DlcStore:String = "https://bloodmoonds.github.io/vs-bloodiey-modstore/";
-	#end
+	public static var DlcStorXD:String = "https://bloodmoonds.github.io/vs-bloodiey-modstore/";
 	private var html:String;
 
 	var DlcHttp = new haxe.Http(VsBloodieyDlcList);
