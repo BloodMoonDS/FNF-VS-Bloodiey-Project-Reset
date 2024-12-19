@@ -132,9 +132,9 @@
 	<haxelib name="format" />
 	<haxelib name="hxcpp" if="desktop"/>
 	<haxelib name="http-socket" if="desktop"/>
-	<haxelib name="hldx" if="desktop"/>
 	<haxelib name="HxWebView" if="desktop"/>
 	<haxelib name="zip" if="desktop"/>
+	
 	
 	<!-- Enables a terminal log prompt on debug builds -->
 	<haxelib name="hxcpp-debug-server" if="debug"/>

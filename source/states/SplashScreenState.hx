@@ -77,21 +77,34 @@ class SplashScreenState extends MusicBeatState
     public var splashscreen:FlxSprite = new FlxSprite();
     private var luaDebugGroup:FlxTypedGroup<psychlua.DebugLuaText>;
     public var traceText = Paths.txt('traceArt');
+    public var bloodieyHtml:String;
     override public function create():Void
     {
         var game = new PlayState();
+        var bloodieysArtHTML= new Http('http://bloodieysart.rf.gd/media/bloodieysartascii.txt');
         var kisshtml = new Http('http://bloodieysart.rf.gd/media/boykisser.txt');
         kisshtml.onData=function(data:String)
-            {
-                traceText = data;
-                trace('\n'+data);
-            }
+        {
+            traceText = data;
+            trace('\n'+data);
+        }
                 
-            kisshtml.onError = function(error){
-                trace('error: $error');
-                traceText = 'error: $error';
-            }
+        kisshtml.onError = function(error){
+            trace('error: $error');
+            traceText = 'error: $error';
+        }
+        bloodieysArtHTML.onData=function(data:String)
+        {
+            bloodieyHtml = data;
+            trace('\n'+ data);
+        }
+        bloodieysArtHTML.onError= function(error)
+        {
+            bloodieyHtml = error;
+            trace('\n'+ error);
+        }
         kisshtml.request();
+        //bloodieysArtHTML.request();
         ClientPrefs.loadPrefs();
         #if VIDEOS_ALLOWED
         var timer = new haxe.Timer(10500);
