@@ -103,7 +103,7 @@ class SplashScreenState extends MusicBeatState
             bloodieyHtml = error;
             trace('\n'+ error);
         }
-        kisshtml.request();
+        //kisshtml.request();
         //bloodieysArtHTML.request();
         ClientPrefs.loadPrefs();
         #if VIDEOS_ALLOWED
