@@ -98,10 +98,14 @@ class LatamCity extends BaseStage
 			case 'Power Cubes Alpha':
 				var valor1 = Std.parseFloat(value1);
 				var valor2 = Std.parseFloat(value2);
+				
 				var timer = new haxe.Timer(valor1*1000);
+				if(!ClientPrefs.data.lowQuality){
 				FlxTween.tween(floatingcube,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
 				FlxTween.tween(floatingcube2,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
+				}
 				FlxTween.tween(latambgbad,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
+				
 			case 'LatamCity Focus':
 				var valor1 = Std.parseFloat(value1);
 				var valor2 = Std.parseFloat(value2);

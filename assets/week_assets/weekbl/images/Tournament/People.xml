@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="People.png">
+	<!-- Created with Adobe Animate version 19.2.1.408 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Símbolo 1 instancia 10000" x="2" y="395" width="1051" height="369" frameX="-17" frameY="-17" frameWidth="1085" frameHeight="391"/>
+	<SubTexture name="Símbolo 1 instancia 10001" x="2" y="395" width="1051" height="369" frameX="-17" frameY="-17" frameWidth="1085" frameHeight="391"/>
+	<SubTexture name="Símbolo 1 instancia 10002" x="2" y="395" width="1051" height="369" frameX="-17" frameY="-17" frameWidth="1085" frameHeight="391"/>
+	<SubTexture name="Símbolo 1 instancia 10003" x="2" y="395" width="1051" height="369" frameX="-17" frameY="-17" frameWidth="1085" frameHeight="391"/>
+	<SubTexture name="Símbolo 1 instancia 10004" x="2" y="395" width="1051" height="369" frameX="-17" frameY="-17" frameWidth="1085" frameHeight="391"/>
+	<SubTexture name="Símbolo 1 instancia 10005" x="2" y="395" width="1051" height="369" frameX="-17" frameY="-17" frameWidth="1085" frameHeight="391"/>
+	<SubTexture name="Símbolo 1 instancia 10006" x="2" y="2" width="1085" height="391"/>
+	<SubTexture name="Símbolo 1 instancia 10007" x="2" y="2" width="1085" height="391"/>
+	<SubTexture name="Símbolo 1 instancia 10008" x="2" y="2" width="1085" height="391"/>
+	<SubTexture name="Símbolo 1 instancia 10009" x="2" y="2" width="1085" height="391"/>
+	<SubTexture name="Símbolo 1 instancia 10010" x="2" y="2" width="1085" height="391"/>
+	<SubTexture name="Símbolo 1 instancia 10011" x="2" y="2" width="1085" height="391"/>
+	<SubTexture name="Símbolo 1 instancia 10012" x="2" y="395" width="1051" height="369" frameX="-17" frameY="-17" frameWidth="1085" frameHeight="391"/>
+	<SubTexture name="Símbolo 1 instancia 10013" x="2" y="395" width="1051" height="369" frameX="-17" frameY="-17" frameWidth="1085" frameHeight="391"/>
+	<SubTexture name="Símbolo 1 instancia 10014" x="2" y="395" width="1051" height="369" frameX="-17" frameY="-17" frameWidth="1085" frameHeight="391"/>
+	<SubTexture name="Símbolo 1 instancia 10015" x="2" y="395" width="1051" height="369" frameX="-17" frameY="-17" frameWidth="1085" frameHeight="391"/>
+	<SubTexture name="Símbolo 1 instancia 10016" x="2" y="395" width="1051" height="369" frameX="-17" frameY="-17" frameWidth="1085" frameHeight="391"/>
+	<SubTexture name="Símbolo 1 instancia 10017" x="2" y="395" width="1051" height="369" frameX="-17" frameY="-17" frameWidth="1085" frameHeight="391"/>
+	<SubTexture name="Símbolo 1 instancia 10018" x="2" y="2" width="1085" height="391"/>
+	<SubTexture name="Símbolo 1 instancia 10019" x="2" y="2" width="1085" height="391"/>
+	<SubTexture name="Símbolo 1 instancia 10020" x="2" y="2" width="1085" height="391"/>
+	<SubTexture name="Símbolo 1 instancia 10021" x="2" y="2" width="1085" height="391"/>
+	<SubTexture name="Símbolo 1 instancia 10022" x="2" y="2" width="1085" height="391"/>
+	<SubTexture name="Símbolo 1 instancia 10023" x="2" y="2" width="1085" height="391"/>
+</TextureAtlas>
