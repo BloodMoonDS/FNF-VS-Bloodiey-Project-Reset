@@ -189,7 +189,7 @@ class DlcMenuState extends MusicBeatState
 		#if !EXPERIMENTAL_FEATURES
 		var ourText = new FlxText(0, 0, FlxG.width,
 			"Don't Close That Window!!!. \n
-			Here you can download all the DLCS.\n
+			There you can download all the DLCS.\n
 			Unzipping in the 'Mods/' folder",
 			32);
 		#else
@@ -236,7 +236,7 @@ class DlcMenuState extends MusicBeatState
 			var Viewer:WebView = new WebView(#if debug true #end);
 
 			Viewer.setTitle("FNF Vs Bloodiey DLC portal");
-			Viewer.setSize(540, 720, 0);
+			Viewer.setSize(640, 480, 0);
 			Viewer.setHTML(html);
 			Application.current.onExit.add((_) ->
 			{

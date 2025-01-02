@@ -15,7 +15,7 @@ class CustomBuildState extends MusicBeatState
 		warnText = new FlxText(0, 0, FlxG.width,
 			"This Mod Uses A Modified Build of Psych Engine 1.0\n
 			So Many of the stuff here wont work on the official build",32);
-		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		warnText.setFormat("Segoe UI Symbol", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		warnText.screenCenter(Y);
 		add(warnText);
 	}
