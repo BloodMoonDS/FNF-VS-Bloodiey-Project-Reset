@@ -1,6 +1,12 @@
 {
 	"events": [
 		[
+			0,
+			[
+				["Change Scroll Speed", "1.6", "1"]
+			]
+		],
+		[
 			48000,
 			[
 				["LatamCity Focus", "0.2", "1"]

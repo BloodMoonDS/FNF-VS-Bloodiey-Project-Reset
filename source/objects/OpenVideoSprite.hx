@@ -1,5 +1,6 @@
 package objects;
 
+import states.TitleState;
 import flixel.addons.display.FlxPieDial;
 
 #if hxvlc
@@ -9,7 +10,10 @@ import hxvlc.flixel.FlxVideoSprite;
 class OpenVideoSprite extends FlxSpriteGroup {
 	#if VIDEOS_ALLOWED
 	public var finishCallback:Void->Void = null;
-	public var onSkip:Void->Void = null;
+	public var onSkip:Void->Void = function()
+	{
+		MusicBeatState.switchState(new TitleState());
+	}
 
 	final _timeToSkip:Float = 1;
 	public var holdingTime:Float = 0;
@@ -89,7 +93,7 @@ class OpenVideoSprite extends FlxSpriteGroup {
 	{
 		if(alreadyDestroyed)
 		{
-			super.destroy();
+			//super.destroy();
 			return;
 		}
 
@@ -127,7 +131,7 @@ class OpenVideoSprite extends FlxSpriteGroup {
 				if(onSkip != null) onSkip();
 				finishCallback = null;
 				videoSprite.bitmap.onEndReached.dispatch();
-				PlayState.instance.remove(this);
+				//PlayState.instance.remove(this);
 				trace('Skipped video');
 				return;
 			}
