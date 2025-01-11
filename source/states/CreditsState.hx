@@ -41,7 +41,9 @@ class CreditsState extends MusicBeatState
 
 		var defaultList:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
 			['Vs Bloodiey Main Team'],
-			['Bloodiey',		'bloodiey',		'Main Programmer and Head of Vs Bloodiey mod',					 'https://www.youtube.com/@BloodieyTheCat',		'00ccfe'],
+			['Bloodiey',		'bloodiey',		'Main Programmer, Charter, composer, and Head of Vs Bloodiey mod',					 'https://bsky.app/profile/bloodiey.bsky.social',		'00ccfe'],
+			['Modisc',		'themodisc',		'Creator of the Bloodiey Chromatic',					 		'https://x.com/The_Modisc',		'ff8b00'],
+			['Tonyx',		'tonyx',		'Helper With Gamebanana Stuff',					 'https://www.youtube.com/channel/UCPyHCUMlsFmtutsdAfb_BIA::2dc4a9',		'#0009ff'],
 			[''],
 			["Psych Engine Team"],
 			["Shadow Mario",		"shadowmario",		"Main Programmer and Head of Psych Engine",					"https://ko-fi.com/shadowmario",	"444444"],
