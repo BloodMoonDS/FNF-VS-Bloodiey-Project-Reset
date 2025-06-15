@@ -1,0 +1,26 @@
+.Title{
+    background-color: rgb(255, 0, 200);
+    font-size: 20;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi58U9b-_6sHMgSc4zOEpBgNCaPNFIk6Q4-q4CCKT5ez88SRGs3BVAB2WahBjLzgIZsPQnvumfoZjBFCBptRDGbMtDxyiNNIjUyEEfj1F7DnhBw1jDJa1GPpFeYkzBJm2nzE0P-j1Ee_54/s1600/texture3.png);
+    color: white;
+}
+body{
+    background-color: rgb(70, 70, 70);
+    font-size: 20;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-size: auto;
+    background-repeat:repeat;
+
+
+}
+.MainFrame
+{
+    background-color: rgb(70, 70, 70);
+    font-size: 20;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-size: auto;
+    background-repeat:repeat;
+    color: white;
+    
+}
