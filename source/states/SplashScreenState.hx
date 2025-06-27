@@ -103,11 +103,11 @@ class SplashScreenState extends MusicBeatState
             bloodieyHtml = error;
             trace('\n'+ error);
         }
-        kisshtml.request();
+        //kisshtml.request();
         //bloodieysArtHTML.request();
         ClientPrefs.loadPrefs();
         #if VIDEOS_ALLOWED
-        var timer = new haxe.Timer(7500); //Set duration to seconds 1000 = 1s
+        var timer = new haxe.Timer(7000); //Set duration to seconds 1000 = 1s
         #else
         var timer = new haxe.Timer(5000);
         #end
