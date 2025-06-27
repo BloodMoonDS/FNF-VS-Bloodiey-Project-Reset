@@ -1,0 +1,9 @@
+{
+	"name": "Dorfic Theme For VS-Bloodiey Mod",
+	"description": "Feel The orange themes from Dorfic frutiegr aero's asthetic ",
+	"restart":false,
+	"runsGlobally": true,
+	"color": [255, 136, 5],
+	"discordRPC": "863222024192262205",
+	"iconFramerate": 10
+}

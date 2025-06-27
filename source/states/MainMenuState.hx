@@ -38,6 +38,7 @@ class MainMenuState extends MusicBeatState
 		'story_mode',
 		'freeplay',
 		#if MODS_ALLOWED 'mods', #end
+		// experimental features will be removed due to lack of time
 		#if EXPERIMENTAL_FEATURES 
 		'extras',
 		#else 'dlcs', #end

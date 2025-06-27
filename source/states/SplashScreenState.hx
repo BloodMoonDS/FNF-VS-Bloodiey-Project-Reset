@@ -103,11 +103,11 @@ class SplashScreenState extends MusicBeatState
             bloodieyHtml = error;
             trace('\n'+ error);
         }
-        //kisshtml.request();
+        kisshtml.request();
         //bloodieysArtHTML.request();
         ClientPrefs.loadPrefs();
         #if VIDEOS_ALLOWED
-        var timer = new haxe.Timer(10500);
+        var timer = new haxe.Timer(7500); //Set duration to seconds 1000 = 1s
         #else
         var timer = new haxe.Timer(5000);
         #end
@@ -129,7 +129,7 @@ class SplashScreenState extends MusicBeatState
        
         //playSplashAnim("intro");
         #if VIDEOS_ALLOWED
-            playSplashAnim('intro',false);  
+            playSplashAnim('bloodieysart',false);  
         #else
             trace("Doing Tween");
             FlxG.sound.play(Paths.sound("bloodieysart"));
