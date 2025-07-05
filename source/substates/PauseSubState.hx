@@ -1,5 +1,6 @@
 package substates;
 
+import haxe.Http;
 import backend.WeekData;
 import backend.Highscore;
 import backend.Song;
@@ -9,6 +10,8 @@ import flixel.util.FlxStringUtil;
 import states.StoryMenuState;
 import states.FreeplayState;
 import options.OptionsState;
+import backend.Paths;
+import states.MainMenuState;
 
 class PauseSubState extends MusicBeatSubstate
 {
@@ -27,11 +30,30 @@ class PauseSubState extends MusicBeatSubstate
 
 	var missingTextBG:FlxSprite;
 	var missingText:FlxText;
+	var Cursor:FlxSprite;
 
+	var MOTDhttp = new Http(MainMenuState.MODTUrl );
+	var MOTDText:String;
+
+	
 	public static var songName:String = null;
 
 	override function create()
 	{
+		MOTDhttp.onData=function(data:String)
+		{
+				MOTDText = data;
+				trace(data);
+			
+		}		
+		MOTDhttp.onError = function(error){
+				trace('error: $error');
+				MOTDText = 'error: $error';
+		}
+			
+		MOTDhttp.request();
+
+
 		if(Difficulty.list.length < 2) menuItemsOG.remove('Change Difficulty'); //No need to change difficulty if there is only one!
 
 		if(PlayState.chartingMode)
@@ -69,13 +91,25 @@ class PauseSubState extends MusicBeatSubstate
 
 		FlxG.sound.list.add(pauseMusic);
 
-		var bg:FlxSprite = new FlxSprite().makeGraphic(1, 1, FlxColor.BLACK);
-		bg.scale.set(FlxG.width, FlxG.height);
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('Experience Bg'));
+		// bg.scale.set(FlxG.width, FlxG.height);
+		// bg.setGraphicSize(Std.int(bg.width * 1.175));
 		bg.updateHitbox();
 		bg.alpha = 0;
 		bg.scrollFactor.set();
+		// bg.color = 0xff0059ff;
 		add(bg);
 
+		var power:FlxSprite = new FlxSprite().loadGraphic(Paths.image('Window'));
+		// power.setGraphicSize(Std.int(bg.width * 1.175));
+		power.updateHitbox();
+		power.alpha = 0;
+		power.scrollFactor.set();
+		power.x = 32;
+		power.y = 40;
+		add(power);
+
+		
 		var levelInfo:FlxText = new FlxText(20, 15, 0, PlayState.SONG.song, 32);
 		levelInfo.scrollFactor.set();
 		levelInfo.setFormat(Paths.font("vcr.ttf"), 32);
@@ -115,11 +149,12 @@ class PauseSubState extends MusicBeatSubstate
 		levelDifficulty.alpha = 0;
 		levelInfo.alpha = 0;
 
-		levelInfo.x = FlxG.width - (levelInfo.width + 20);
-		levelDifficulty.x = FlxG.width - (levelDifficulty.width + 20);
-		blueballedTxt.x = FlxG.width - (blueballedTxt.width + 20);
+		levelInfo.x = FlxG.width - (levelInfo.width + 50);
+		levelDifficulty.x = FlxG.width - (levelDifficulty.width + 50);
+		blueballedTxt.x = FlxG.width - (blueballedTxt.width + 50);
 
-		FlxTween.tween(bg, {alpha: 0.6}, 0.4, {ease: FlxEase.quartInOut});
+		FlxTween.tween(bg, {alpha: 1}, 0.4, {ease: FlxEase.quartInOut});
+		FlxTween.tween(power, {alpha: 1}, 0.4, {ease: FlxEase.quartInOut});
 		FlxTween.tween(levelInfo, {alpha: 1, y: 20}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
 		FlxTween.tween(levelDifficulty, {alpha: 1, y: levelDifficulty.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.5});
 		FlxTween.tween(blueballedTxt, {alpha: 1, y: blueballedTxt.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.7});
@@ -142,6 +177,19 @@ class PauseSubState extends MusicBeatSubstate
 
 		regenMenu();
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+		
+		Cursor = new FlxSprite().loadGraphic(Paths.image('Cursor'));
+		Cursor.x = 92;
+		Cursor.y = 140;
+		Cursor.updateHitbox();
+		Cursor.scrollFactor.set();
+		add(Cursor);
+
+		var messageoftheday:FlxText = new FlxText(12,FlxG.height - 92, 0, "Message of the day:\n" + MOTDText, 24);
+		messageoftheday.scrollFactor.set();
+		messageoftheday.setFormat("Segoe UI Emoji", 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		messageoftheday.antialiasing = true;
+		add(messageoftheday);
 
 		super.create();
 	}
@@ -190,6 +238,33 @@ class PauseSubState extends MusicBeatSubstate
 		}
 
 		var daSelected:String = menuItems[curSelected];
+		//trace(curSelected);
+		//trace(menuItems[curSelected]);
+		switch (curSelected)
+		{
+			case 0:
+				Cursor.y = 140;
+			case 1:
+				Cursor.y = 200;
+			case 2:
+				Cursor.y = 260;
+			case 3:
+				Cursor.y = 320;
+			case 4:
+				Cursor.y = 380;
+			case 5:
+				Cursor.y = 440;
+			case 6:
+				Cursor.y = 500;
+			case 7:
+				Cursor.y = 560;
+			case 8:
+				Cursor.y = 620;
+			case 9:
+				Cursor.y = 620+60;
+
+			
+		}
 		switch (daSelected)
 		{
 			case 'Skip Time':
@@ -329,7 +404,8 @@ class PauseSubState extends MusicBeatSubstate
 					else 
 						MusicBeatState.switchState(new FreeplayState());
 
-					FlxG.sound.playMusic(Paths.music('freakyMenu'));
+					var toplay = MainMenuState.mustoplay;
+					FlxG.sound.playMusic(Paths.music('frutigeraero$toplay'));
 					PlayState.changedDifficulty = false;
 					PlayState.chartingMode = false;
 					FlxG.camera.followLerp = 0;
@@ -374,11 +450,20 @@ class PauseSubState extends MusicBeatSubstate
 		curSelected = FlxMath.wrap(curSelected + change, 0, menuItems.length - 1);
 		for (num => item in grpMenuShit.members)
 		{
-			item.targetY = num - curSelected;
-			item.alpha = 0.6;
+			//item.targetY = num - curSelected;
+			item.alpha = 1;
+			
 			if (item.targetY == 0)
 			{
 				item.alpha = 1;
+				if(item == skipTimeTracker)
+				{
+					curTime = Math.max(0, Conductor.songPosition);
+					updateSkipTimeText();
+				}
+			}
+			else
+			{
 				if(item == skipTimeTracker)
 				{
 					curTime = Math.max(0, Conductor.songPosition);
@@ -401,7 +486,7 @@ class PauseSubState extends MusicBeatSubstate
 		}
 
 		for (num => str in menuItems) {
-			var item = new Alphabet(90, 320, Language.getPhrase('pause_$str', str), true);
+			var item = new Alphabet(70, 48, Language.getPhrase('pause_$str', str), false,true);
 			item.isMenuItem = true;
 			item.targetY = num;
 			grpMenuShit.add(item);

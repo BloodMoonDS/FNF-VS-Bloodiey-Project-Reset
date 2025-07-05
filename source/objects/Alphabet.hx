@@ -13,9 +13,13 @@ enum Alignment
 class Alphabet extends FlxSpriteGroup
 {
 	public var text(default, set):String;
-
+	public var StaticText = false;
 	public var bold:Bool = false;
 	public var letters:Array<AlphaCharacter> = [];
+	public var Small:Bool = false;
+	public var custom:Bool = false;
+
+
 
 	public var isMenuItem:Bool = false;
 	public var targetY:Int = 0;
@@ -28,9 +32,10 @@ class Alphabet extends FlxSpriteGroup
 	public var rows:Int = 0;
 
 	public var distancePerItem:FlxPoint = new FlxPoint(20, 120);
+	public var CustomDistancePerItem:FlxPoint = new FlxPoint(0, 60);
 	public var startPosition:FlxPoint = new FlxPoint(0, 0); //for the calculations
 
-	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = true)
+	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = true, ?isCustom:Bool = false, ?isStatic:Bool = false, ?isSmall:Bool = false)
 	{
 		super(x, y);
 
@@ -38,6 +43,9 @@ class Alphabet extends FlxSpriteGroup
 		this.startPosition.y = y;
 		this.bold = bold;
 		this.text = text;
+		this.StaticText = isStatic;
+		this.Small = isSmall;
+		this.custom = isCustom;
 	}
 
 	public function setAlignmentFromString(align:String)
@@ -168,9 +176,22 @@ class Alphabet extends FlxSpriteGroup
 		{
 			var lerpVal:Float = Math.exp(-elapsed * 9.6);
 			if(changeX)
-				x = FlxMath.lerp((targetY * distancePerItem.x) + startPosition.x, x, lerpVal);
+				if(!custom){
+					x = FlxMath.lerp((targetY * distancePerItem.x) + startPosition.x, x, lerpVal);
+				}
+				else
+				{
+					x = FlxMath.lerp((targetY * CustomDistancePerItem.x) + startPosition.x, x, lerpVal);
+				}
 			if(changeY)
-				y = FlxMath.lerp((targetY * 1.3 * distancePerItem.y) + startPosition.y, y, lerpVal);
+				if(!custom)
+				{
+					y = FlxMath.lerp((targetY * 1.3 * distancePerItem.y) + startPosition.y, y, lerpVal);
+				}
+				else
+				{
+					y = FlxMath.lerp((targetY * 1 * CustomDistancePerItem.y) + startPosition.y, y, lerpVal);
+				}
 		}
 		super.update(elapsed);
 	}
@@ -182,7 +203,13 @@ class Alphabet extends FlxSpriteGroup
 			if(changeX)
 				x = (targetY * distancePerItem.x) + startPosition.x;
 			if(changeY)
-				y = (targetY * 1.3 * distancePerItem.y) + startPosition.y;
+				if(!custom){
+					y = (targetY * 1.3 * distancePerItem.y) + startPosition.y;
+				}
+				else
+				{
+					y = (targetY * 1 * distancePerItem.y) + startPosition.y;
+				}
 		}
 	}
 
@@ -332,7 +359,7 @@ class AlphaCharacter extends FlxSprite
 	}
 
 	var parent:Alphabet;
-	public var alignOffset:Float = 0; //Don't change this
+	public var alignOffset:Float = 0; //Don't change thisy = FlxMath.lerp((targetY * 1.3 * distancePerItem.y) + startPosition.y, y, lerpVal);
 	public var letterOffset:Array<Float> = [0, 0];
 
 	public var row:Int = 0;
