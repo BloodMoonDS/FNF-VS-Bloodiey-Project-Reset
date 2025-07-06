@@ -38,16 +38,31 @@ class Tournament extends BaseStage
 		add(tournamentbgblue);
 		add(tournamentbgcolor);
 		
+
 		
 		if(!ClientPrefs.data.lowQuality)
 		{
 			pipol = new BGSprite('Tournament/People',200,300,1,1,['Símbolo 1 instancia 1'],true);
 			add(pipol);
 		}
-		karma = new BGSprite('Tournament/Karma',-100,250,1,1,['Karma'],true);
+		karma = new BGSprite('Tournament/Karma',-100,250,1,1,['Karma'],false);
 		add(karma);	
-		fanta = new BGSprite('Tournament/Fantasmal_Invert',1100,350,-1,1,['Fantaasmal_Twisted'],true);
+		fanta = new BGSprite('Tournament/Fantasmal_Invert',1400,350,1,1,['Fantaasmal_Twisted'],false);
 		add(fanta);
+		if(!ClientPrefs.data.lowQuality)
+		{
+			Geometry1 = new BGSprite('Tournament/geometry',-100,0,1,1,['geometry idle'],true);
+			Geometry1.alpha = 0;
+			add(Geometry1);
+			Geometry2 = new BGSprite('Tournament/geometry',1400,0,1,1,['geometry idle'],true);
+			Geometry2.alpha = 0;
+			add(Geometry2);
+		}
+	}
+	public function karmaandfantadance()
+	{
+		karma.dance();
+		fanta.dance();
 	}
 	
 	override function createPost()
@@ -71,10 +86,15 @@ class Tournament extends BaseStage
 		switch(count)
 		{
 			case THREE: //num 0
+				karmaandfantadance();
 			case TWO: //num 1
+				karmaandfantadance();
 			case ONE: //num 2
+				karmaandfantadance();
 			case GO: //num 3
+				karmaandfantadance();
 			case START: //num 4
+				karmaandfantadance();
 		}
 	}
 
@@ -93,7 +113,7 @@ class Tournament extends BaseStage
 	}
 	override function beatHit()
 	{
-		// Code here
+		karmaandfantadance();
 	}
 	override function sectionHit()
 	{
@@ -124,7 +144,21 @@ class Tournament extends BaseStage
 	{
 		switch(eventName)
 		{
-			case "My Event":
+			case "Tournament Color Twist":
+				var valor1 = Std.parseFloat(value1);
+				var valor2 = Std.parseFloat(value2);				
+				FlxTween.tween(tournamentbgcolor,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
+			case "Tournament Geometrical Chaos":
+				var valor1 = Std.parseFloat(value1);
+				var valor2 = Std.parseFloat(value2);
+
+				var timer = new haxe.Timer(valor1*1000);
+				if(!ClientPrefs.data.lowQuality){
+				FlxTween.tween(Geometry1,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
+				FlxTween.tween(Geometry2,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
+				}
+				FlxTween.tween(tournamentbgblue,{'alpha': valor2},valor1,{ease: FlxEase.circIn, type: ONESHOT});
+
 		}
 	}
 	override function eventPushed(event:objects.Note.EventNote)

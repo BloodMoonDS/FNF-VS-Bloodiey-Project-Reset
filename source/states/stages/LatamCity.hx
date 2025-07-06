@@ -51,18 +51,6 @@ class LatamCity extends BaseStage
 		latambgFocus.alpha = 0;
 		add(latambgFocus);
 		if(!ClientPrefs.data.lowQuality) {
-			//createRandomCubes(); 
-			/*
-			cube = new FlxAnimate(25, 25);
-			cube.showPivot = false;
-			Paths.loadAnimateAtlas(cube,'stage/LatamCity/floatingcube');
-			cube.anim.addBySymbol('cube_idle','cube idle');
-			cube.anim.play('cube_idle',true);
-			*/ //this shit doesnt work
-			var CurCubes = 0;
-			
-			
-			
 			floatingcube = new BGSprite('floatingcube',1000,250,1,1, ['cube idle'], true);
 			floatingcube.updateHitbox();
 			add(floatingcube);

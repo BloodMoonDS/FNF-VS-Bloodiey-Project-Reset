@@ -85,7 +85,9 @@ class ChartingState extends MusicBeatState implements PsychUIEventHandler.PsychU
 		['Set Property', "Value 1: Variable name\nValue 2: New value"],
 		['Play Sound', "Value 1: Sound file name\nValue 2: Volume (Default: 1), ranges from 0 to 1"],
 		['Power Cubes Alpha', "Value 1: Time In Seconds \n Value 2: alpha of the cubes"],
-		['LatamCity Focus', "Value 1: Time In Seconds \n Value 2: alpha of the backfround"]
+		['LatamCity Focus', "Value 1: Time In Seconds \n Value 2: alpha of the background"],
+		['Tournament Geometrical Chaos', "Value 1: Time In Seconds \n Value 2: alpha of the Geodes"],
+		['Tournament Color Twist', "Value 1: Time In Seconds \n Value 2: alpha of the background"]
 	];
 	
 	public static var keysArray:Array<FlxKey> = [ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT]; //Used for Vortex Editor

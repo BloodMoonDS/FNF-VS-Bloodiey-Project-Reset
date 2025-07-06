@@ -24,7 +24,7 @@ class MainMenuState extends MusicBeatState
 
 	public static var psychEngineVersion:String = '1.0'; // This is also used for Discord RPC
 
-	public static var vsBloodieyVersion:String = 'beta 1.1'; // will use this instead of psych Engine
+	public static var vsBloodieyVersion:String = 'beta 1.3'; // will use this instead of psych Engine
 	public static var curSelected:Int = 0;
 	public static var curColumn:MainMenuColumn = CENTER;
 	var allowMouse:Bool = true; //Turn this off to block mouse movement in menus

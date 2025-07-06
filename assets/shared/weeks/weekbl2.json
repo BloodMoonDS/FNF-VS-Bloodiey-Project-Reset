@@ -1,0 +1,36 @@
+{
+	"storyName": "The Singing Tournament",
+	"difficulties": "Hard",
+	"hideFreeplay": false,
+	"weekBackground": "latamcity",
+	"weekBefore": "weekbl",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"bloodiey",
+		"bf",
+		"gf"
+	],
+	"hideStoryMode": true,
+	"songs": [
+		[
+			"the tournament begins",
+			"bloodiey",
+			[
+				100,
+				100,
+				100
+			]
+		],
+		[
+			"im not a coward",
+			"bloodiey-mad",
+			[
+				240,
+				100,
+				100
+			]
+		]
+	],
+	"weekName": "Bloodiey Week",
+	"hiddenUntilUnlocked": false
+}
