@@ -20,7 +20,7 @@ class OutdatedState extends MusicBeatState
 			\n
 			Thank you for playing our mod!",
 			32);
-		warnText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		warnText.setFormat(Paths.font("seguiemj.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		warnText.screenCenter(Y);
 		add(warnText);
 	}

@@ -44,7 +44,8 @@ class Note extends FlxSprite
 		'Hurt Note',
 		'GF Sing',
 		'No Animation',
-		'Power Note'
+		'Power Note',
+		'Corrupted Power Note'
 	];
 
 	public var extraData:Map<String, Dynamic> = new Map<String, Dynamic>();
@@ -210,7 +211,7 @@ class Note extends FlxSprite
 					//noteSplashData.r = 0xFFFF0000;
 					//noteSplashData.g = 0xFF101010;
 					noteSplashData.texture = 'noteSplashes-electric';
-
+					noteSplashData.useRGBShader = true;
 					// gameplay data
 					lowPriority = true;
 					missHealth = isSustainNote ? 0.25 : 0.1;
@@ -231,12 +232,36 @@ class Note extends FlxSprite
 
 					// splash data and colors
 					//noteSplashData.r = 0xFF00C3FF;
-					//noteSplashData.g = 0xFF101010;
+					//noteSplashData.g = 0xFF0077FF;
 					noteSplashData.texture = 'noteSplashes/noteSplashes-electric';
 					noteSplashData.useRGBShader = true;
 					// gameplay data
 					lowPriority = true;
 					missHealth = isSustainNote ? 0.5 : 0.5;
+					hitCausesMiss = false;
+					hitsound = 'cancelMenu';
+					hitsoundChartEditor = false;
+					customNote = true;
+				case 'Corrupted Power Note':
+					//ignoreNote = mustPress;
+					//It should be pressed
+					//reloadNote('HURTNOTE_assets');
+					//this used to change the note texture to HURTNOTE_assets.png,
+					//but i've changed it to something more optimized with the implementation of RGBPalette:
+
+					// note colors
+					rgbShader.r = 0xFFD10000;
+					rgbShader.g = 0xFF2BFF00;
+					rgbShader.b = 0xFF0011FF;
+
+					// splash data and colors
+					//noteSplashData.r = 0xFF00C3FF;
+					//noteSplashData.g = 0xFF0077FF;
+					noteSplashData.texture = 'noteSplashes/noteSplashes-electric';
+					noteSplashData.useRGBShader = true;
+					// gameplay data
+					lowPriority = true;
+					missHealth = isSustainNote ? 0.6 : 0.6;
 					hitCausesMiss = false;
 					hitsound = 'cancelMenu';
 					hitsoundChartEditor = false;

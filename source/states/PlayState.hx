@@ -3135,7 +3135,7 @@ class PlayState extends MusicBeatState
 				if(note.customNote) // this will detect if its a custom note, used for powernote
 				{
 					if(note.noteType == 'Power Note'){
-					
+						
 					
 						FlxG.sound.play(Paths.sound('blasttrow'));
 						if(boyfriend.hasAnimation('dodge'))
@@ -3147,6 +3147,39 @@ class PlayState extends MusicBeatState
 						{
 							dad.playAnim('attack',true);
 							dad.specialAnim = true;
+						}
+						if(gf != null) // make sure the gf is here
+						{
+							if(gf.hasAnimation('scared'))
+							{
+								gf.playAnim('scared',true);
+								gf.specialAnim = true;
+							}
+						}
+						
+					}
+					if(note.noteType == 'Corrupted Power Note'){
+						
+					
+						FlxG.sound.play(Paths.sound('blasttrow'));
+
+						if(boyfriend.hasAnimation('dodge'))
+						{
+							boyfriend.playAnim('dodge', true);
+							boyfriend.specialAnim = true;
+						}
+						if(dad.hasAnimation('attack'))
+						{
+							dad.playAnim('attack',true);
+							dad.specialAnim = true;
+						}
+						if(gf != null) // make sure the gf is here
+						{
+							if(gf.hasAnimation('scared'))
+							{
+								gf.playAnim('scared',true);
+								gf.specialAnim = true;
+							}
 						}
 						
 					}
