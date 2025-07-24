@@ -5,12 +5,6 @@
 	"weekBackground": "latamcity",
 	"weekBefore": "weekbl",
 	"startUnlocked": true,
-	"weekCharacters": [
-		"bloodiey",
-		"bf",
-		"gf"
-	],
-	"hideStoryMode": true,
 	"songs": [
 		[
 			"the tournament begins",
@@ -29,8 +23,23 @@
 				100,
 				100
 			]
+		],
+		[
+			"ha no shukketsu",
+			"face",
+			[
+				146,
+				113,
+				253
+			]
 		]
 	],
-	"weekName": "Bloodiey Week",
-	"hiddenUntilUnlocked": false
+	"weekCharacters": [
+		"bloodiey",
+		"bf",
+		"gf"
+	],
+	"hideStoryMode": true,
+	"hiddenUntilUnlocked": false,
+	"weekName": "Bloodiey Week"
 }

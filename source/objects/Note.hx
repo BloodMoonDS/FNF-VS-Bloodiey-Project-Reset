@@ -25,6 +25,9 @@ typedef NoteSplashData = {
 	useGlobalShader:Bool, //breaks r/g/b but makes it copy default colors for your custom note
 	useRGBShader:Bool,
 	antialiasing:Bool,
+	r:FlxColor,
+	g:FlxColor,
+	b:FlxColor,
 	a:Float
 }
 
@@ -105,6 +108,9 @@ class Note extends FlxSprite
 		antialiasing: !PlayState.isPixelStage,
 		useGlobalShader: false,
 		useRGBShader: (PlayState.SONG != null) ? !(PlayState.SONG.disableNoteRGB == true) : true,
+		r: -1,
+		g: -1,
+		b: -1,
 		a: ClientPrefs.data.splashAlpha
 	};
 
@@ -148,6 +154,8 @@ class Note extends FlxSprite
 
 	public var customNote = false;
 
+
+
 	private function set_multSpeed(value:Float):Float {
 		resizeByRatio(value / multSpeed);
 		multSpeed = value;
@@ -190,8 +198,9 @@ class Note extends FlxSprite
 		}
 	}
 
+
 	private function set_noteType(value:String):String {
-		noteSplashData.texture = PlayState.SONG != null ? PlayState.SONG.splashSkin : 'noteSplashes';
+		noteSplashData.texture = PlayState.SONG != null ? PlayState.SONG.splashSkin : 'noteSplashes/noteSplashes';
 		defaultRGB();
 
 		if(noteData > -1 && noteType != value) {
@@ -203,15 +212,16 @@ class Note extends FlxSprite
 					//but i've changed it to something more optimized with the implementation of RGBPalette:
 
 					// note colors
+					noteSplashData.useRGBShader = true;
 					rgbShader.r = 0xFF101010;
 					rgbShader.g = 0xFFFF0000;
 					rgbShader.b = 0xFF990022;
 
 					// splash data and colors
-					//noteSplashData.r = 0xFFFF0000;
-					//noteSplashData.g = 0xFF101010;
+					noteSplashData.r = 0xFFFF0000;
+					noteSplashData.g = 0xFF101010;
 					noteSplashData.texture = 'noteSplashes-electric';
-					noteSplashData.useRGBShader = true;
+					
 					// gameplay data
 					lowPriority = true;
 					missHealth = isSustainNote ? 0.25 : 0.1;
@@ -226,15 +236,16 @@ class Note extends FlxSprite
 					//but i've changed it to something more optimized with the implementation of RGBPalette:
 
 					// note colors
+					noteSplashData.useRGBShader = true;
 					rgbShader.r = 0xFF00C3FF;
 					rgbShader.g = 0xFF0077FF;
 					rgbShader.b = 0xFF000A99;
 
 					// splash data and colors
-					//noteSplashData.r = 0xFF00C3FF;
-					//noteSplashData.g = 0xFF0077FF;
+					noteSplashData.r = 0xFF00C3FF;
+					noteSplashData.g = 0xFF0077FF;
 					noteSplashData.texture = 'noteSplashes/noteSplashes-electric';
-					noteSplashData.useRGBShader = true;
+					
 					// gameplay data
 					lowPriority = true;
 					missHealth = isSustainNote ? 0.5 : 0.5;
@@ -250,15 +261,16 @@ class Note extends FlxSprite
 					//but i've changed it to something more optimized with the implementation of RGBPalette:
 
 					// note colors
-					rgbShader.r = 0xFFD10000;
-					rgbShader.g = 0xFF2BFF00;
-					rgbShader.b = 0xFF0011FF;
+					noteSplashData.useRGBShader = true;
+					rgbShader.r = 0xFFFF00FF;
+					rgbShader.g = 0xFFFF0095;
+					rgbShader.b = 0xFF000000;
 
 					// splash data and colors
-					//noteSplashData.r = 0xFF00C3FF;
-					//noteSplashData.g = 0xFF0077FF;
+					noteSplashData.r = 0xFFFF00FF;
+					noteSplashData.g = 0xFFFF0095;
 					noteSplashData.texture = 'noteSplashes/noteSplashes-electric';
-					noteSplashData.useRGBShader = true;
+					
 					// gameplay data
 					lowPriority = true;
 					missHealth = isSustainNote ? 0.6 : 0.6;
@@ -469,6 +481,7 @@ class Note extends FlxSprite
 		if(animName != null)
 			animation.play(animName, true);
 	}
+
 
 	public static function getNoteSkinPostfix()
 	{

@@ -8,13 +8,13 @@ import states.editors.NoteSplashEditorState;
 
 import flixel.system.FlxAssets.FlxShader;
 
-private typedef RGB = {
+typedef RGB = {
 	r:Null<Int>,
 	g:Null<Int>,
 	b:Null<Int>
 }
 
-private typedef NoteSplashAnim = {
+typedef NoteSplashAnim = {
 	name:String,
 	noteData:Int,
 	prefix:String,

@@ -2898,6 +2898,23 @@ class PlayState extends MusicBeatState
 				}
 				// Gets an achievement
 				Achievements.unlock('kachinga');
+			case 'Corrupted Power Note':
+				FlxG.sound.play(Paths.sound('blasttrow'));
+				FlxG.sound.play(Paths.sound('impact'));
+				FlxG.sound.play(Paths.sound('CPWNT2'));
+				createblast(30,30);
+				if(boyfriend.hasAnimation('hurt'))
+				{
+					boyfriend.playAnim('hurt', true);
+					boyfriend.specialAnim = true;
+				}
+				if(dad.hasAnimation('attack'))
+				{
+					dad.playAnim('attack',true);
+					dad.specialAnim = true;
+				}
+				// Gets an achievement
+				
 		}
 		#if LUA_ALLOWED
 		var result:Dynamic = callOnLuas('customNoteMiss', [notes.members.indexOf(note), note.noteData, note.noteType, note.isSustainNote]);
@@ -3162,7 +3179,7 @@ class PlayState extends MusicBeatState
 						
 					
 						FlxG.sound.play(Paths.sound('blasttrow'));
-
+						FlxG.sound.play(Paths.sound('CPWNT2'));
 						if(boyfriend.hasAnimation('dodge'))
 						{
 							boyfriend.playAnim('dodge', true);
