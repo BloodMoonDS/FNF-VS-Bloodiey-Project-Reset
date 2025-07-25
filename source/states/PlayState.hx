@@ -2802,6 +2802,22 @@ class PlayState extends MusicBeatState
 					dad.specialAnim = true;
 				}
 				// Gets an achievement
+			case 'Super Power Note':
+				FlxG.sound.play(Paths.sound('blasttrow'));
+				FlxG.sound.play(Paths.sound('impact'));
+				FlxG.sound.play(Paths.sound('CPWNT2'));
+				FlxG.sound.play(Paths.sound('CPWNT1'));
+				if(boyfriend.hasAnimation('hurt'))
+				{
+					boyfriend.playAnim('hurt', true);
+					boyfriend.specialAnim = true;
+				}
+				if(dad.hasAnimation('attack'))
+				{
+					dad.playAnim('attack',true);
+					dad.specialAnim = true;
+				}
+				// Gets an achievement
 				
 		}
 		#if LUA_ALLOWED
@@ -3177,6 +3193,32 @@ class PlayState extends MusicBeatState
 					
 						FlxG.sound.play(Paths.sound('blasttrow'));
 						FlxG.sound.play(Paths.sound('CPWNT2'));
+						if(boyfriend.hasAnimation('dodge'))
+						{
+							boyfriend.playAnim('dodge', true);
+							boyfriend.specialAnim = true;
+						}
+						if(dad.hasAnimation('attack'))
+						{
+							dad.playAnim('attack',true);
+							dad.specialAnim = true;
+						}
+						if(gf != null) // make sure the gf is here
+						{
+							if(gf.hasAnimation('scared'))
+							{
+								gf.playAnim('scared',true);
+								gf.specialAnim = true;
+							}
+						}
+						
+					}
+					if(note.noteType == 'Super Power Note'){
+						
+					
+						FlxG.sound.play(Paths.sound('blasttrow'));
+						FlxG.sound.play(Paths.sound('CPWNT2'));
+						FlxG.sound.play(Paths.sound('CPWNT1'));
 						if(boyfriend.hasAnimation('dodge'))
 						{
 							boyfriend.playAnim('dodge', true);

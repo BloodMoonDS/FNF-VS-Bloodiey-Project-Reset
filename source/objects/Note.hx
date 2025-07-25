@@ -48,7 +48,9 @@ class Note extends FlxSprite
 		'GF Sing',
 		'No Animation',
 		'Power Note',
-		'Corrupted Power Note'
+		'Corrupted Power Note',
+		'Super Power Note',
+		'Super Hurt Note'
 	];
 
 
@@ -151,7 +153,7 @@ class Note extends FlxSprite
 	}
 	public var hitsound:String = 'hitsound';
 	public var customNote = false;
-	
+
 	private function set_multSpeed(value:Float):Float {
 		resizeByRatio(value / multSpeed);
 		multSpeed = value;
@@ -244,7 +246,7 @@ class Note extends FlxSprite
 					lowPriority = true;
 					missHealth = isSustainNote ? 0.5 : 0.5;
 					hitCausesMiss = false;
-					hitsound = 'cancelMenu';
+					hitsound = 'blasttrow';
 					hitsoundChartEditor = false;
 					customNote = true;
 				case 'Corrupted Power Note':
@@ -256,22 +258,69 @@ class Note extends FlxSprite
 
 					// note colors
 					noteSplashData.useRGBShader = true;
-					rgbShader.r = 0xFFFF00FF;
-					rgbShader.g = 0xFFFF0095;
-					rgbShader.b = 0xFF000000;
+					rgbShader.r = 0xFFFF0000;
+					rgbShader.g = 0xFF00FF00;
+					rgbShader.b = 0xFF0000FF;
 
 					// splash data and colors
-					noteSplashData.r = 0xFFFF00FF;
-					noteSplashData.g = 0xFFFF0095;
+					noteSplashData.r = 0xFFFF0000;
+					noteSplashData.g = 0xFF00FF00;
 					noteSplashData.texture = 'noteSplashes/noteSplashes-electric';
 					
 					// gameplay data
 					lowPriority = true;
 					missHealth = isSustainNote ? 0.6 : 0.6;
 					hitCausesMiss = false;
-					hitsound = 'cancelMenu';
+					hitsound = 'CPWNT2';
 					hitsoundChartEditor = false;
 					customNote = true;
+				case 'Super Power Note':
+					//ignoreNote = mustPress;
+					//It should be pressed
+					//reloadNote('HURTNOTE_assets');
+					//this used to change the note texture to HURTNOTE_assets.png,
+					//but i've changed it to something more optimized with the implementation of RGBPalette:
+
+					// note colors
+					noteSplashData.useRGBShader = true;
+					rgbShader.r = 0xFFFFE600;
+					rgbShader.g = 0xCBFF8800;
+					rgbShader.b = 0xFF7C4600;
+
+					// splash data and colors
+					noteSplashData.r = 0xFFFFE600;
+					noteSplashData.g = 0xCBFF8800;
+					noteSplashData.texture = 'noteSplashes/noteSplashes-electric';
+					
+					// gameplay data
+					lowPriority = true;
+					missHealth = isSustainNote ? 0.8 : 0.8;
+					hitCausesMiss = false;
+					hitsound = 'CPWNT1';
+					hitsoundChartEditor = false;
+					customNote = true;
+				case 'Super Hurt Note':
+					ignoreNote = mustPress;
+					//reloadNote('HURTNOTE_assets');
+					//this used to change the note texture to HURTNOTE_assets.png,
+					//but i've changed it to something more optimized with the implementation of RGBPalette:
+
+					// note colors
+					rgbShader.r = 0xFF101010;
+					rgbShader.g = 0xFF474747;
+					rgbShader.b = 0xFF666666;
+
+					// splash data and colors
+					noteSplashData.r = 0xFF101010;
+					noteSplashData.g = 0xFF474747;
+					noteSplashData.texture = 'noteSplashes/noteSplashes-electric';
+
+					// gameplay data
+					lowPriority = true;
+					missHealth = isSustainNote ? 0.4 : 0.4;
+					hitCausesMiss = true;
+					hitsound = 'cancelMenu';
+					hitsoundChartEditor = false;
 				case 'Alt Animation':
 					animSuffix = '-alt';
 				case 'No Animation':
