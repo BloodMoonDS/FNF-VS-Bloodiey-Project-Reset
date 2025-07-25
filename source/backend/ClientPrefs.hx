@@ -20,7 +20,7 @@ import states.TitleState;
 	public var splashAlpha:Float = 0.6;
 	public var lowQuality:Bool = false;
 	public var shaders:Bool = true;
-	public var cacheOnGPU:Bool = #if !switch false #else true #end; //From Stilic
+	public var cacheOnGPU:Bool = #if !switch false #else true #end; // GPU Caching made by Raltyro
 	public var framerate:Int = 60;
 	public var camZooms:Bool = true;
 	public var hideHud:Bool = false;
@@ -35,6 +35,7 @@ import states.TitleState;
 		[0xFFFF5656, 0xFFF4FFFF, 0xFF990000],
 		[0xFF00D9FF, 0xFFF6FFE6, 0xFF00788D],
 		[0xFFFF5656, 0xFFFFFAF5, 0xFF990000]];
+
 
 	public var ghostTapping:Bool = true;
 	public var timeBarType:String = 'Time Left';
@@ -69,10 +70,10 @@ import states.TitleState;
 
 	public var comboOffset:Array<Int> = [0, 0, 0, 0];
 	public var ratingOffset:Int = 0;
-	public var sickWindow:Int = 45;
-	public var goodWindow:Int = 90;
-	public var badWindow:Int = 135;
-	public var safeFrames:Float = 10;
+	public var sickWindow:Float = 45.0;
+	public var goodWindow:Float = 90.0;
+	public var badWindow:Float = 135.0;
+	public var safeFrames:Float = 10.0;
 	public var guitarHeroSustains:Bool = true;
 	public var discordRPC:Bool = true;
 	public var loadingScreen:Bool = true;

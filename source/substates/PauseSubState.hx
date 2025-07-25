@@ -1,6 +1,5 @@
 package substates;
 
-import haxe.Http;
 import backend.WeekData;
 import backend.Highscore;
 import backend.Song;
@@ -9,9 +8,8 @@ import flixel.util.FlxStringUtil;
 
 import states.StoryMenuState;
 import states.FreeplayState;
-import options.OptionsState;
-import backend.Paths;
 import states.MainMenuState;
+import options.OptionsState;
 
 class PauseSubState extends MusicBeatSubstate
 {
@@ -27,15 +25,12 @@ class PauseSubState extends MusicBeatSubstate
 	var skipTimeText:FlxText;
 	var skipTimeTracker:Alphabet;
 	var curTime:Float = Math.max(0, Conductor.songPosition);
+	var Cursor:FlxSprite;
 
 	var missingTextBG:FlxSprite;
 	var missingText:FlxText;
-	var Cursor:FlxSprite;
-
 	var MOTDhttp = new Http(MainMenuState.MODTUrl );
 	var MOTDText:String;
-
-	
 	public static var songName:String = null;
 
 	override function create()
@@ -53,13 +48,10 @@ class PauseSubState extends MusicBeatSubstate
 			
 		MOTDhttp.request();
 
-
 		if(Difficulty.list.length < 2) menuItemsOG.remove('Change Difficulty'); //No need to change difficulty if there is only one!
-
 		if(PlayState.chartingMode)
 		{
 			menuItemsOG.insert(2, 'Leave Charting Mode');
-			
 			var num:Int = 0;
 			if(!PlayState.instance.startingSong)
 			{
@@ -69,7 +61,8 @@ class PauseSubState extends MusicBeatSubstate
 			menuItemsOG.insert(3 + num, 'End Song');
 			menuItemsOG.insert(4 + num, 'Toggle Practice Mode');
 			menuItemsOG.insert(5 + num, 'Toggle Botplay');
-		}
+		} else if(PlayState.instance.practiceMode && !PlayState.instance.startingSong)
+			menuItemsOG.insert(3, 'Skip Time');
 		menuItems = menuItemsOG;
 
 		for (i in 0...Difficulty.list.length) {
@@ -77,7 +70,6 @@ class PauseSubState extends MusicBeatSubstate
 			difficultyChoices.push(diff);
 		}
 		difficultyChoices.push('BACK');
-
 
 		pauseMusic = new FlxSound();
 		try
@@ -109,7 +101,6 @@ class PauseSubState extends MusicBeatSubstate
 		power.y = 40;
 		add(power);
 
-		
 		var levelInfo:FlxText = new FlxText(20, 15, 0, PlayState.SONG.song, 32);
 		levelInfo.scrollFactor.set();
 		levelInfo.setFormat(Paths.font("vcr.ttf"), 32);
@@ -149,10 +140,16 @@ class PauseSubState extends MusicBeatSubstate
 		levelDifficulty.alpha = 0;
 		levelInfo.alpha = 0;
 
-		levelInfo.x = FlxG.width - (levelInfo.width + 50);
-		levelDifficulty.x = FlxG.width - (levelDifficulty.width + 50);
-		blueballedTxt.x = FlxG.width - (blueballedTxt.width + 50);
-
+		levelInfo.x = FlxG.width - (levelInfo.width + 20);
+		levelDifficulty.x = FlxG.width - (levelDifficulty.width + 20);
+		blueballedTxt.x = FlxG.width - (blueballedTxt.width + 20);
+		Cursor = new FlxSprite().loadGraphic(Paths.image('Cursor'));
+		Cursor.x = 92;
+		Cursor.y = 140;
+		Cursor.updateHitbox();
+		Cursor.scrollFactor.set();
+		add(Cursor);
+		
 		FlxTween.tween(bg, {alpha: 1}, 0.4, {ease: FlxEase.quartInOut});
 		FlxTween.tween(power, {alpha: 1}, 0.4, {ease: FlxEase.quartInOut});
 		FlxTween.tween(levelInfo, {alpha: 1, y: 20}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
@@ -177,19 +174,6 @@ class PauseSubState extends MusicBeatSubstate
 
 		regenMenu();
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
-		
-		Cursor = new FlxSprite().loadGraphic(Paths.image('Cursor'));
-		Cursor.x = 92;
-		Cursor.y = 140;
-		Cursor.updateHitbox();
-		Cursor.scrollFactor.set();
-		add(Cursor);
-
-		var messageoftheday:FlxText = new FlxText(12,FlxG.height - 92, 0, "Message of the day:\n" + MOTDText, 24);
-		messageoftheday.scrollFactor.set();
-		messageoftheday.setFormat("Segoe UI Emoji", 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		messageoftheday.antialiasing = true;
-		add(messageoftheday);
 
 		super.create();
 	}
@@ -238,8 +222,6 @@ class PauseSubState extends MusicBeatSubstate
 		}
 
 		var daSelected:String = menuItems[curSelected];
-		//trace(curSelected);
-		//trace(menuItems[curSelected]);
 		switch (curSelected)
 		{
 			case 0:
@@ -404,8 +386,7 @@ class PauseSubState extends MusicBeatSubstate
 					else 
 						MusicBeatState.switchState(new FreeplayState());
 
-					var toplay = MainMenuState.mustoplay;
-					FlxG.sound.playMusic(Paths.music('frutigeraero$toplay'));
+					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 					PlayState.changedDifficulty = false;
 					PlayState.chartingMode = false;
 					FlxG.camera.followLerp = 0;
@@ -451,7 +432,7 @@ class PauseSubState extends MusicBeatSubstate
 		for (num => item in grpMenuShit.members)
 		{
 			//item.targetY = num - curSelected;
-			item.alpha = 1;
+			item.alpha = 0.6;
 			
 			if (item.targetY == 0)
 			{

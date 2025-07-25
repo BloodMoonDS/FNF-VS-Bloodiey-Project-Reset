@@ -51,6 +51,7 @@ class Note extends FlxSprite
 		'Corrupted Power Note'
 	];
 
+
 	public var extraData:Map<String, Dynamic> = new Map<String, Dynamic>();
 
 	public var strumTime:Float = 0;
@@ -99,8 +100,6 @@ class Note extends FlxSprite
 	public static var swagWidth:Float = 160 * 0.7;
 	public static var colArray:Array<String> = ['purple', 'blue', 'green', 'red'];
 	public static var defaultNoteSkin(default, never):String = 'noteSkins/NOTE_assets';
-
-	public var PowerNoteHit = false;
 
 	public var noteSplashData:NoteSplashData = {
 		disabled: false,
@@ -151,11 +150,8 @@ class Note extends FlxSprite
 		return hitsoundForce ? hitsoundVolume : 0.0;
 	}
 	public var hitsound:String = 'hitsound';
-
 	public var customNote = false;
-
-
-
+	
 	private function set_multSpeed(value:Float):Float {
 		resizeByRatio(value / multSpeed);
 		multSpeed = value;
@@ -198,7 +194,6 @@ class Note extends FlxSprite
 		}
 	}
 
-
 	private function set_noteType(value:String):String {
 		noteSplashData.texture = PlayState.SONG != null ? PlayState.SONG.splashSkin : 'noteSplashes/noteSplashes';
 		defaultRGB();
@@ -212,7 +207,6 @@ class Note extends FlxSprite
 					//but i've changed it to something more optimized with the implementation of RGBPalette:
 
 					// note colors
-					noteSplashData.useRGBShader = true;
 					rgbShader.r = 0xFF101010;
 					rgbShader.g = 0xFFFF0000;
 					rgbShader.b = 0xFF990022;
@@ -220,8 +214,8 @@ class Note extends FlxSprite
 					// splash data and colors
 					noteSplashData.r = 0xFFFF0000;
 					noteSplashData.g = 0xFF101010;
-					noteSplashData.texture = 'noteSplashes-electric';
-					
+					noteSplashData.texture = 'noteSplashes/noteSplashes-electric';
+
 					// gameplay data
 					lowPriority = true;
 					missHealth = isSustainNote ? 0.25 : 0.1;
@@ -481,7 +475,6 @@ class Note extends FlxSprite
 		if(animName != null)
 			animation.play(animName, true);
 	}
-
 
 	public static function getNoteSkinPostfix()
 	{

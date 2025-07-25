@@ -9,7 +9,7 @@ import objects.MusicPlayer;
 
 import options.GameplayChangersSubstate;
 import substates.ResetScoreSubState;
-
+import states.MainMenuState;
 import flixel.math.FlxMath;
 import flixel.util.FlxDestroyUtil;
 
@@ -49,7 +49,7 @@ class FreeplayState extends MusicBeatState
 	var bottomString:String;
 	var bottomText:FlxText;
 	var bottomBG:FlxSprite;
-
+	public var mustoplay = MainMenuState.mustoplay;
 	var player:MusicPlayer;
 
 	override function create()
@@ -65,7 +65,7 @@ class FreeplayState extends MusicBeatState
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
 		#end
-
+		
 		if(WeekData.weeksList.length < 1)
 		{
 			FlxTransitionableState.skipNextTransIn = true;
@@ -221,7 +221,7 @@ class FreeplayState extends MusicBeatState
 			return;
 
 		if (FlxG.sound.music.volume < 0.7)
-			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
+			FlxG.sound.music.volume += 0.5 * elapsed;
 
 		lerpScore = Math.floor(FlxMath.lerp(intendedScore, lerpScore, Math.exp(-elapsed * 24)));
 		lerpRating = FlxMath.lerp(intendedRating, lerpRating, Math.exp(-elapsed * 12));
@@ -311,14 +311,15 @@ class FreeplayState extends MusicBeatState
 
 				player.playingMusic = false;
 				player.switchPlayMusic();
-
-				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+				var mustplay = MainMenuState.mustoplay;
+				FlxG.sound.playMusic(Paths.music('frutigeraero$mustplay'));
 				FlxTween.tween(FlxG.sound.music, {volume: 1}, 1);
 			}
 			else 
 			{
 				persistentUpdate = false;
-				FlxG.sound.play(Paths.sound('cancelMenu'));
+				var mustplay = MainMenuState.mustoplay;
+				FlxG.sound.playMusic(Paths.music('frutigeraero$mustplay'));
 				MusicBeatState.switchState(new MainMenuState());
 			}
 		}
@@ -436,6 +437,12 @@ class FreeplayState extends MusicBeatState
 				return;
 			}
 
+			@:privateAccess
+			if(PlayState._lastLoadedModDirectory != Mods.currentModDirectory)
+			{
+				trace('CHANGED MOD DIRECTORY, RELOADING STUFF');
+				Paths.freeGraphicsFromMemory();
+			}
 			LoadingState.prepareToSong();
 			LoadingState.loadAndSwitchState(new PlayState());
 			#if !SHOW_LOADING_SCREEN FlxG.sound.music.stop(); #end
@@ -597,7 +604,7 @@ class FreeplayState extends MusicBeatState
 
 		FlxG.autoPause = ClientPrefs.data.autoPause;
 		if (!FlxG.sound.music.playing && !stopMusicPlay)
-			FlxG.sound.playMusic(Paths.music('frutigeraero$MainMenuState.mustoplay'));
+			FlxG.sound.playMusic(Paths.music('frutigeraero$mustoplay'));
 	}	
 }
 

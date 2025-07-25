@@ -6,9 +6,8 @@ import flixel.effects.FlxFlicker;
 import lime.app.Application;
 import states.editors.MasterEditorMenu;
 import options.OptionsState;
-import states.DlcMenuState;
 import flash.system.System;
-import states.ExtrasState;
+
 enum MainMenuColumn {
 	LEFT;
 	CENTER;
@@ -17,13 +16,10 @@ enum MainMenuColumn {
 
 class MainMenuState extends MusicBeatState
 {
-
+	public static var psychEngineVersion:String = '1.0.4'; // This is also used for Discord RPC
 	public static var MODTUrl:String = "http://bloodieysart.rf.gd/media/motd.txt";
 	var MODTHttp = new haxe.Http(MODTUrl);
 	public var MOTDText:String;
-
-	public static var psychEngineVersion:String = '1.0'; // This is also used for Discord RPC
-
 	public static var vsBloodieyVersion:String = 'beta 1.3'; // will use this instead of psych Engine
 	public static var curSelected:Int = 0;
 	public static var curColumn:MainMenuColumn = CENTER;
@@ -59,8 +55,10 @@ class MainMenuState extends MusicBeatState
 		trace(mustoplay);
 		FlxG.sound.playMusic(Paths.music('frutigeraero$mustoplay'), 0);
 	}
+	static var showOutdatedWarning:Bool = true;
 	override function create()
 	{
+		super.create();
 		randomMusic();
 		MODTHttp.onData=function(data:String)
 		{
@@ -82,6 +80,7 @@ class MainMenuState extends MusicBeatState
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
 		#end
+
 
 		persistentUpdate = persistentDraw = true;
 
@@ -151,7 +150,13 @@ class MainMenuState extends MusicBeatState
 		#end
 		#end
 
-		super.create();
+		#if CHECK_FOR_UPDATES
+		if (showOutdatedWarning && ClientPrefs.data.checkForUpdates && substates.OutdatedSubState.updateVersion != psychEngineVersion) {
+			persistentUpdate = false;
+			showOutdatedWarning = false;
+			openSubState(new substates.OutdatedSubState());
+		}
+		#end
 
 		FlxG.camera.follow(camFollow, null, 0.15);
 	}
@@ -342,83 +347,86 @@ class MainMenuState extends MusicBeatState
 			if (controls.ACCEPT || (FlxG.mouse.justPressed && allowMouse))
 			{
 				FlxG.sound.play(Paths.sound('confirmMenu'));
-				if (optionShit[curSelected] != 'donate')
+				selectedSomethin = true;
+				FlxG.mouse.visible = false;
+
+				if (ClientPrefs.data.flashing)
+					FlxFlicker.flicker(magenta, 1.1, 0.15, false);
+
+				var item:FlxSprite;
+				var option:String;
+				switch(curColumn)
 				{
-					selectedSomethin = true;
-					FlxG.mouse.visible = false;
+					case CENTER:
+						option = optionShit[curSelected];
+						item = menuItems.members[curSelected];
 
-					if (ClientPrefs.data.flashing)
-						FlxFlicker.flicker(magenta, 1.1, 0.15, false);
+					case LEFT:
+						option = leftOption;
+						item = leftItem;
 
-					var item:FlxSprite;
-					var option:String;
-					switch(curColumn)
-					{
-						case CENTER:
-							option = optionShit[curSelected];
-							item = menuItems.members[curSelected];
-
-						case LEFT:
-							option = leftOption;
-							item = leftItem;
-
-						case RIGHT:
-							option = rightOption;
-							item = rightItem;
-					}
-
-					FlxFlicker.flicker(item, 1, 0.06, false, false, function(flick:FlxFlicker)
-					{
-						switch (option)
-						{
-							case 'story_mode':
-								MusicBeatState.switchState(new StoryMenuState());
-							case 'freeplay':
-								MusicBeatState.switchState(new FreeplayState());
-
-							#if MODS_ALLOWED
-							case 'mods':
-								MusicBeatState.switchState(new ModsMenuState());
-							#end
-
-							#if ACHIEVEMENTS_ALLOWED
-							case 'achievements':
-								MusicBeatState.switchState(new AchievementsMenuState());
-							#end
-							#if !switch
-							case 'dlcs':
-							
-								MusicBeatState.switchState(new DlcMenuState());
-							case 'extras':
-							
-								MusicBeatState.switchState(new ExtrasState());
-							#end
-							case 'credits':
-								MusicBeatState.switchState(new CreditsState());
-							case 'options':
-								MusicBeatState.switchState(new OptionsState());
-								OptionsState.onPlayState = false;
-								if (PlayState.SONG != null)
-								{
-									PlayState.SONG.arrowSkin = null;
-									PlayState.SONG.splashSkin = null;
-									PlayState.stageUI = 'normal';
-								}
-							case 'exit':
-								System.exit(0);
-
-						}
-					});
-					
-					for (memb in menuItems)
-					{
-						if(memb == item)
-							continue;
-
-						FlxTween.tween(memb, {alpha: 0}, 0.4, {ease: FlxEase.quadOut});
-					}
+					case RIGHT:
+						option = rightOption;
+						item = rightItem;
 				}
-				else CoolUtil.browserLoad('https://ninja-muffin24.itch.io/funkin');
+
+				FlxFlicker.flicker(item, 1, 0.06, false, false, function(flick:FlxFlicker)
+				{
+					switch (option)
+					{
+						case 'story_mode':
+							MusicBeatState.switchState(new StoryMenuState());
+						case 'freeplay':
+							MusicBeatState.switchState(new FreeplayState());
+
+						#if MODS_ALLOWED
+						case 'mods':
+							MusicBeatState.switchState(new ModsMenuState());
+						#end
+
+						#if ACHIEVEMENTS_ALLOWED
+						case 'achievements':
+							MusicBeatState.switchState(new AchievementsMenuState());
+						#end
+						#if !switch
+						case 'dlcs':
+							
+							MusicBeatState.switchState(new DlcMenuState());
+						case 'extras':
+							
+							MusicBeatState.switchState(new ExtrasState());
+							#end
+						case 'credits':
+							MusicBeatState.switchState(new CreditsState());
+						case 'options':
+							MusicBeatState.switchState(new OptionsState());
+							OptionsState.onPlayState = false;
+							if (PlayState.SONG != null)
+							{
+								PlayState.SONG.arrowSkin = null;
+								PlayState.SONG.splashSkin = null;
+								PlayState.stageUI = 'normal';
+							}
+						case 'donate':
+							CoolUtil.browserLoad('https://ninja-muffin24.itch.io/funkin');
+							selectedSomethin = false;
+							item.visible = true;
+						case 'exit':
+								System.exit(0);
+						default:
+							trace('Menu Item ${option} doesn\'t do anything');
+							selectedSomethin = false;
+							item.visible = true;
+					}
+				});
+				
+				for (memb in menuItems)
+				{
+					if(memb == item)
+						continue;
+
+					FlxTween.tween(memb, {alpha: 0}, 0.4, {ease: FlxEase.quadOut});
+				}
 			}
 			#if desktop
 			if (controls.justPressed('debug_1'))

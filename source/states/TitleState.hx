@@ -16,9 +16,7 @@ import openfl.display.BitmapData;
 import shaders.ColorSwap;
 
 import states.StoryMenuState;
-import states.OutdatedState;
 import states.MainMenuState;
-import states.CustomBuildState;
 
 typedef TitleData =
 {
@@ -56,10 +54,8 @@ class TitleState extends MusicBeatState
 
 	var curWacky:Array<String> = [];
 
-	var curWocky:Array<String> = [];
-
 	var wackyImage:FlxSprite;
-	var titleExtraText = new FlxText();
+
 	#if TITLE_SCREEN_EASTER_EGG
 	final easterEggKeys:Array<String> = [
 		'SHADOW', 'RIVEREN', 'BBPANZU', 'PESSY'
@@ -67,10 +63,6 @@ class TitleState extends MusicBeatState
 	final allowedKeys:String = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	var easterEggKeysBuffer:String = '';
 	#end
-
-	var mustUpdate:Bool = false;
-
-	public static var updateVersion:String = '';
 
 	override public function create():Void
 	{
@@ -85,30 +77,6 @@ class TitleState extends MusicBeatState
 		}
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
-		curWocky = FlxG.random.getObject(getMainTextShit());
-		#if CHECK_FOR_UPDATES
-		if(ClientPrefs.data.checkForUpdates && !closedState) {
-			trace('checking for update');
-			var http = new haxe.Http("http://bloodieysart.rf.gd/media/bloodieyversion.txt");
-
-			http.onData = function (data:String)
-			{
-				updateVersion = data.split('\n')[0].trim();
-				var curVersion:String = MainMenuState.vsBloodieyVersion.trim();
-				trace('version online: ' + updateVersion + ', your version: ' + curVersion);
-				if(updateVersion != curVersion) {
-					trace('versions arent matching!');
-					mustUpdate = true;
-				}
-			}
-
-			http.onError = function (error) {
-				trace('error: $error');
-			}
-
-			http.request();
-		}
-		#end
 
 		if(!initialized)
 		{
@@ -139,9 +107,7 @@ class TitleState extends MusicBeatState
 			MusicBeatState.switchState(new FlashingState());
 		}
 		else
-		{
 			startIntro();
-		}
 		#end
 	}
 
@@ -169,11 +135,6 @@ class TitleState extends MusicBeatState
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
 
-		
-		titleExtraText.text = curWocky[0];
-		titleExtraText.x = 300;
-		titleExtraText.y = 50;
-		titleExtraText.setFormat("Segoe UI Emoji", 24, FlxColor.YELLOW, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		gfDance = new FlxSprite(gfPosition.x, gfPosition.y);
 		gfDance.antialiasing = ClientPrefs.data.antialiasing;
 		
@@ -220,10 +181,6 @@ class TitleState extends MusicBeatState
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
 
-		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
-		logo.antialiasing = ClientPrefs.data.antialiasing;
-		logo.screenCenter();
-
 		blackScreen = new FlxSprite().makeGraphic(1, 1, FlxColor.BLACK);
 		blackScreen.scale.set(FlxG.width, FlxG.height);
 		blackScreen.updateHitbox();
@@ -245,7 +202,7 @@ class TitleState extends MusicBeatState
 		add(titleText); //"Press Enter to Begin" text
 		add(credGroup);
 		add(ngSpr);
-		
+
 		if (initialized)
 			skipIntro();
 		else
@@ -338,24 +295,7 @@ class TitleState extends MusicBeatState
 				danceRightFrames = [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28];
 		}
 	}
-	function getMainTextShit():Array<Array<String>>
-		{
-			#if MODS_ALLOWED
-			var firstArray:Array<String> = Mods.mergeAllTextsNamed('data/mainMenuText.txt');
-			#else
-			var fullText:String = Assets.getText(Paths.txt('mainMenuText'));
-			var firstArray:Array<String> = fullText.split('\n');
-			#end
-			var swagGoodArray:Array<Array<String>> = [];
-	
-			for (i in firstArray)
-			{
-				swagGoodArray.push(i.split('\n'));
-			}
-	
-			return swagGoodArray;
-		}
-	
+
 	function getIntroTextShit():Array<Array<String>>
 	{
 		#if MODS_ALLOWED
@@ -447,11 +387,7 @@ class TitleState extends MusicBeatState
 
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
-					if (mustUpdate)
-						MusicBeatState.switchState(new OutdatedState());
-					else
-						MusicBeatState.switchState(new CustomBuildState());
-
+					MusicBeatState.switchState(new MainMenuState());
 					closedState = true;
 				});
 				// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
@@ -653,7 +589,6 @@ class TitleState extends MusicBeatState
 					default: //Go back to normal ugly ass boring GF
 						remove(ngSpr);
 						remove(credGroup);
-						add(titleExtraText);
 						FlxG.camera.flash(FlxColor.WHITE, 2);
 						skippedIntro = true;
 
@@ -682,8 +617,9 @@ class TitleState extends MusicBeatState
 						FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
 						FlxG.sound.music.fadeIn(4, 0, 0.7);
 						transitioning = false;
-						if(easteregg == 'PESSY')
-							Achievements.unlock('pessy_easter_egg');
+						#if ACHIEVEMENTS_ALLOWED
+						if(easteregg == 'PESSY') Achievements.unlock('pessy_easter_egg');
+						#end
 					};
 				}
 			}
@@ -691,8 +627,6 @@ class TitleState extends MusicBeatState
 			{
 				remove(ngSpr);
 				remove(credGroup);
-				//removed cuz it wont work
-				//add(titleExtraText);
 				FlxG.camera.flash(FlxColor.WHITE, 4);
 
 				var easteregg:String = FlxG.save.data.psychDevsEasterEgg;

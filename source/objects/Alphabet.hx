@@ -13,13 +13,9 @@ enum Alignment
 class Alphabet extends FlxSpriteGroup
 {
 	public var text(default, set):String;
-	public var StaticText = false;
+
 	public var bold:Bool = false;
 	public var letters:Array<AlphaCharacter> = [];
-	public var Small:Bool = false;
-	public var custom:Bool = false;
-
-
 
 	public var isMenuItem:Bool = false;
 	public var targetY:Int = 0;
@@ -34,6 +30,10 @@ class Alphabet extends FlxSpriteGroup
 	public var distancePerItem:FlxPoint = new FlxPoint(20, 120);
 	public var CustomDistancePerItem:FlxPoint = new FlxPoint(0, 60);
 	public var startPosition:FlxPoint = new FlxPoint(0, 0); //for the calculations
+
+	public var StaticText = false;
+	public var Small:Bool = false;
+	public var custom:Bool = false;
 
 	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = true, ?isCustom:Bool = false, ?isStatic:Bool = false, ?isSmall:Bool = false)
 	{
@@ -359,7 +359,7 @@ class AlphaCharacter extends FlxSprite
 	}
 
 	var parent:Alphabet;
-	public var alignOffset:Float = 0; //Don't change thisy = FlxMath.lerp((targetY * 1.3 * distancePerItem.y) + startPosition.y, y, lerpVal);
+	public var alignOffset:Float = 0; //Don't change this
 	public var letterOffset:Array<Float> = [0, 0];
 
 	public var row:Int = 0;
