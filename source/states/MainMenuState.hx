@@ -7,6 +7,11 @@ import lime.app.Application;
 import states.editors.MasterEditorMenu;
 import options.OptionsState;
 import flash.system.System;
+import backend.Paths;
+import backend.CoolUtil;
+// Style Handler :P
+import sys.io.File;
+import haxe.Json;
 
 enum MainMenuColumn {
 	LEFT;
@@ -24,11 +29,17 @@ class MainMenuState extends MusicBeatState
 	public static var curSelected:Int = 0;
 	public static var curColumn:MainMenuColumn = CENTER;
 	var allowMouse:Bool = true; //Turn this off to block mouse movement in menus
-
+	
+	 
 	var menuItems:FlxTypedGroup<FlxSprite>;
 	var leftItem:FlxSprite;
 	var rightItem:FlxSprite;
 
+	// StyleSheet Stuff To Define Styles
+	public var jsonStyle = File.getContent(Paths.imageJson("style"));
+ 	public var curButtonGraphic:String = 'hud/button'; // Use this as the default if the style is not aviable
+	public var curBgImage:String = 'aquaBG'; 
+	public var curBgImageDesat:String = 'aquaDesat';
 	//Centered/Text options
 	var optionShit:Array<String> = [
 		'story_mode',
@@ -45,7 +56,7 @@ class MainMenuState extends MusicBeatState
 	var leftOption:String = #if ACHIEVEMENTS_ALLOWED 'achievements' #else null #end;
 	var rightOption:String = 'options';
 
-	var magenta:FlxSprite;
+	public var magenta:FlxSprite;
 	var camFollow:FlxObject;
 	public static var mustoplay:Int=1;
 	static function randomMusic()

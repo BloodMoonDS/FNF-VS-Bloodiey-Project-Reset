@@ -1,0 +1,27 @@
+{
+    "styleName" : "Frutiger Echo",
+    "magenta" : "0xff33ff00",
+    "MenuStyle" : 
+    {
+        "BackGround" : "aquaBG",
+        "BackGroundDesat" : "aquaDesat",
+        "ButtonStyle" : "hud/button"
+
+    },
+    "MenuSounds":
+    {
+        "confirm" : "",
+        "cancel": ""
+    },
+    "MenuMusic":
+    {
+        "MainMenu1":"frutigeraero1",
+        "MainMenu2":"frutigeraero2",
+        "MainMenu3":"frutigeraero3",
+
+        "Nostalgia1":"nostalgia",
+        "Nostalgia2":"nostalgia2",
+        "Nostalgia3":"nostalgia3"
+    }
+
+}

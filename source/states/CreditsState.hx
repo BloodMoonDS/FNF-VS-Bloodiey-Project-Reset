@@ -19,6 +19,8 @@ class CreditsState extends MusicBeatState
 
 	override function create()
 	{
+		
+
 		FlxG.sound.playMusic(Paths.music('nostalgia'), 0);
 		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence

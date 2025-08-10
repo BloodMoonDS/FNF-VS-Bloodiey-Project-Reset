@@ -237,7 +237,12 @@ class Paths
 		}
 		return cacheBitmap(key, parentFolder, bitmap, allowGPU);
 	}
+	static public function imageJson(key:String, ?parentFolder:String = null,):String
+	{
+		key = Language.getFileTranslation('images/$key') + '.json';
 
+		return key;
+	}
 	public static function cacheBitmap(key:String, ?parentFolder:String = null, ?bitmap:BitmapData, ?allowGPU:Bool = true):FlxGraphic
 	{
 		if (bitmap == null)

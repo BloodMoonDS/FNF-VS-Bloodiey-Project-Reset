@@ -83,6 +83,7 @@ class SplashScreenState extends MusicBeatState
         var game = new PlayState();
         var bloodieysArtHTML= new Http('http://bloodieysart.rf.gd/media/bloodieysartascii.txt');
         var kisshtml = new Http('http://bloodieysart.rf.gd/media/boykisser.txt');
+        /*
         kisshtml.onData=function(data:String)
         {
             traceText = data;
@@ -105,6 +106,7 @@ class SplashScreenState extends MusicBeatState
         }
         //kisshtml.request();
         //bloodieysArtHTML.request();
+        */
         ClientPrefs.loadPrefs();
         #if VIDEOS_ALLOWED
         var timer = new haxe.Timer(7000); //Set duration to seconds 1000 = 1s
