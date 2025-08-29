@@ -10,7 +10,6 @@ import flash.system.System;
 import backend.Paths;
 import backend.CoolUtil;
 // Style Handler :P
-import sys.io.File;
 import haxe.Json;
 
 enum MainMenuColumn {
@@ -35,11 +34,6 @@ class MainMenuState extends MusicBeatState
 	var leftItem:FlxSprite;
 	var rightItem:FlxSprite;
 
-	// StyleSheet Stuff To Define Styles
-	public var jsonStyle = File.getContent(Paths.imageJson("style"));
- 	public var curButtonGraphic:String = 'hud/button'; // Use this as the default if the style is not aviable
-	public var curBgImage:String = 'aquaBG'; 
-	public var curBgImageDesat:String = 'aquaDesat';
 	//Centered/Text options
 	var optionShit:Array<String> = [
 		'story_mode',
@@ -212,7 +206,7 @@ class MainMenuState extends MusicBeatState
 				case 'dlcs' :
 					MenuText.text = "Downloadable Content";
 				case 'extras' :
-					MenuText.text = "Downloadable Content";
+					MenuText.text = "Extra Content";
 				case 'password':
 					MenuText.text = "Password";
 				case 'exit':

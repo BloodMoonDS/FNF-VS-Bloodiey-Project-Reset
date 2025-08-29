@@ -148,7 +148,7 @@ class PauseSubState extends MusicBeatSubstate
 		Cursor.y = 140;
 		Cursor.updateHitbox();
 		Cursor.scrollFactor.set();
-		add(Cursor);
+		
 		
 		FlxTween.tween(bg, {alpha: 1}, 0.4, {ease: FlxEase.quartInOut});
 		FlxTween.tween(power, {alpha: 1}, 0.4, {ease: FlxEase.quartInOut});
@@ -247,6 +247,7 @@ class PauseSubState extends MusicBeatSubstate
 
 			
 		}
+		add(Cursor);
 		switch (daSelected)
 		{
 			case 'Skip Time':
@@ -445,6 +446,7 @@ class PauseSubState extends MusicBeatSubstate
 			}
 			else
 			{
+				item.alpha = 1;
 				if(item == skipTimeTracker)
 				{
 					curTime = Math.max(0, Conductor.songPosition);
