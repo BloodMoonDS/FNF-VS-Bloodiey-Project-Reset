@@ -1,7 +1,7 @@
 function opponentNoteHit(note) -- health draining mechanic
     health = getProperty('health')
-    	if getProperty('health') > 0.1 then
-        setProperty('health', health- 0.05);
+    	if getProperty('health') > 0.5 then
+        setProperty('health', health- 0.08);
     end
 end
 
@@ -24,8 +24,8 @@ end
 
 function noteMiss(id, noteData, noteType, isSustainNote)
     health = getProperty('health')
-    	if getProperty('health') > 0.75 then
-        setProperty('health', health - 0.5); 
+    	if getProperty('health') > 0.9 then
+        setProperty('health', health - 0.2); 
     end
 end
 
