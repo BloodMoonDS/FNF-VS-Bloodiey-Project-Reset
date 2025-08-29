@@ -243,6 +243,7 @@ class Note extends FlxSprite
 					noteSplashData.texture = 'noteSplashes/noteSplashes-electric';
 					
 					// gameplay data
+					hitHealth = 0.25;
 					lowPriority = true;
 					missHealth = isSustainNote ? 0.5 : 0.5;
 					hitCausesMiss = false;
@@ -261,7 +262,7 @@ class Note extends FlxSprite
 					rgbShader.r = 0xFFFF0000;
 					rgbShader.g = 0xFF00FF00;
 					rgbShader.b = 0xFF0000FF;
-
+					hitHealth = 0.5;
 					// splash data and colors
 					noteSplashData.r = 0xFFFF0000;
 					noteSplashData.g = 0xFF00FF00;
@@ -293,6 +294,7 @@ class Note extends FlxSprite
 					noteSplashData.texture = 'noteSplashes/noteSplashes-electric';
 					
 					// gameplay data
+					hitHealth = 0.75;
 					lowPriority = true;
 					missHealth = isSustainNote ? 0.8 : 0.8;
 					hitCausesMiss = false;
