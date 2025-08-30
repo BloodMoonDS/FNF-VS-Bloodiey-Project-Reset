@@ -5,41 +5,50 @@
 	"weekBackground": "latamcity",
 	"weekBefore": "weekbl",
 	"startUnlocked": true,
+	"weekCharacters": [
+		"bloodiey",
+		"bf",
+		"gf"
+	],
+	"hideStoryMode": false,
 	"songs": [
 		[
 			"the tournament begins",
 			"bloodiey",
 			[
-				100,
-				100,
-				100
+				175,
+				0,
+				255
 			]
 		],
 		[
 			"im not a coward",
 			"bloodiey-mad",
 			[
-				240,
-				100,
-				100
+				175,
+				0,
+				255
 			]
 		],
 		[
 			"ha no shukketsu",
-			"face",
+			"bloodiey-injured",
 			[
-				146,
-				113,
-				253
+				175,
+				0,
+				255
+			]
+		],
+		[
+			"new beginning",
+			"bloodiey",
+			[
+				175,
+				0,
+				255
 			]
 		]
 	],
-	"weekCharacters": [
-		"bloodiey",
-		"bf",
-		"gf"
-	],
-	"hideStoryMode": true,
 	"hiddenUntilUnlocked": false,
-	"weekName": "Bloodiey Week"
+	"weekName": "Bloodiey Week 2"
 }
