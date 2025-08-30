@@ -19,7 +19,7 @@ yeah the hmm file does not work
 
 this mod has an official linux port
 
-> This mod uses psych engine 1.0 so its compaible with psych engine mods
+> This mod uses psych engine 1.0.4 so its compaible with psych engine mods
 
 
 
