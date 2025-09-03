@@ -13,25 +13,23 @@ aggresivity: values above 17 may get you dizzy
 ]]
 
 --end config 
-local DefaultYPos = 570; -- by default is gonna be this value
+local DefaultYPos 
+
 function onCreate()
-    
+    print( getPropertyFromClass('ClientPrefs', 'downScroll') )
 end
 function onCountdownTick(counter)
-    
+    --debugPrint( getPropertyFromClass('ClientPrefs', 'downScroll') )
 	if counter == 0 then
-        --[[
-        if  getPropertyFromClass('ClientPrefs', 'downScroll') ==false then
-            setPropertyFromClass("ClientPrefs", "downScroll", true);
-             -- forces the player to be in downscroll
-        end
-        ]]
+        
+       
+        
         
 	end
 end
 function onUpdate(elapsed)songPos = getSongPosition()
 local currentBeat = (songPos/5000)*(curBpm/24)
-
+    --print(getPropertyFromClass('backend.ClientPrefs','data.downScroll'),"FFFFFF")
     --Check if the note is an Instakill Note
     --noteSplashTexture
     --[[
@@ -47,11 +45,14 @@ local currentBeat = (songPos/5000)*(curBpm/24)
         end
     end
     --]]
-    if  getPropertyFromClass('ClientPrefs', 'downScroll') ==false then
-        DefaultYPos = 300
+    --DefaultYPos = getPropertyFromGroup('members', 0, 'y');
+    
+    if  getPropertyFromClass('backend.ClientPrefs','data.downScroll') == false then
+        DefaultYPos = 50
     else
         DefaultYPos = 570
     end
+    
     local eqagg = aggresivity*-1;
     local moveEquation = math.cos(currentBeat*2)*eqagg;
     
