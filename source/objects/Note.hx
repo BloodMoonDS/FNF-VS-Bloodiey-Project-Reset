@@ -50,7 +50,14 @@ class Note extends FlxSprite
 		'Power Note',
 		'Corrupted Power Note',
 		'Super Power Note',
-		'Super Hurt Note'
+		'Super Hurt Note',
+		// Why Creating Another Note Type When you can Use this and its compatible With Other DLCS or mods that does not use the note 
+		'Song Specific Note 1',
+		'Song Specific Note 2',
+		'Song Specific Note 3',
+		'Song Specific Note 4',
+		'Song Specific Note 5',
+		'Instakill Note'
 	];
 
 
@@ -248,7 +255,7 @@ class Note extends FlxSprite
 					missHealth = isSustainNote ? 0.5 : 0.5;
 					hitCausesMiss = false;
 					hitsound = 'blasttrow';
-					hitsoundChartEditor = false;
+					hitsoundChartEditor = true;
 					customNote = true;
 				case 'Corrupted Power Note':
 					//ignoreNote = mustPress;
@@ -273,7 +280,7 @@ class Note extends FlxSprite
 					missHealth = isSustainNote ? 0.6 : 0.6;
 					hitCausesMiss = false;
 					hitsound = 'CPWNT2';
-					hitsoundChartEditor = false;
+					hitsoundChartEditor = true;
 					customNote = true;
 				case 'Super Power Note':
 					//ignoreNote = mustPress;
@@ -299,7 +306,7 @@ class Note extends FlxSprite
 					missHealth = isSustainNote ? 0.8 : 0.8;
 					hitCausesMiss = false;
 					hitsound = 'CPWNT1';
-					hitsoundChartEditor = false;
+					hitsoundChartEditor = true;
 					customNote = true;
 				case 'Super Hurt Note':
 					ignoreNote = mustPress;
@@ -322,7 +329,7 @@ class Note extends FlxSprite
 					missHealth = isSustainNote ? 0.4 : 0.4;
 					hitCausesMiss = true;
 					hitsound = 'cancelMenu';
-					hitsoundChartEditor = false;
+					hitsoundChartEditor =true;
 				case 'Alt Animation':
 					animSuffix = '-alt';
 				case 'No Animation':
@@ -330,6 +337,28 @@ class Note extends FlxSprite
 					noMissAnimation = true;
 				case 'GF Sing':
 					gfNote = true;
+				case 'Instakill Note':
+					ignoreNote = mustPress;
+					//reloadNote('HURTNOTE_assets');
+					//this used to change the note texture to HURTNOTE_assets.png,
+					//but i've changed it to something more optimized with the implementation of RGBPalette:
+
+					// note colors
+					rgbShader.r = 0xFF101010;
+					rgbShader.g = 0xFF000000;
+					rgbShader.b = 0xFF000000;
+
+					// splash data and colors
+					noteSplashData.r = 0xFF000000;
+					noteSplashData.g = 0xFF101010;
+					noteSplashData.texture = 'noteSplashes/noteSplashes-electric';
+
+					// gameplay data
+					lowPriority = true;
+					missHealth = isSustainNote ? 9999 : 9999;
+					hitCausesMiss = true;
+					hitsound = 'cancelMenu';
+					hitsoundChartEditor = false;
 			}
 			if (value != null && value.length > 1) NoteTypesConfig.applyNoteTypeData(this, value);
 			if (hitsound != 'hitsound' && hitsoundVolume > 0) Paths.sound(hitsound); //precache new sound for being idiot-proof
